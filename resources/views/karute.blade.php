@@ -5,7 +5,7 @@
     <div class="card mb-3">
         <img src="" class="card-img-top" alt="..." style="background-color:blue;">
         <div class="card-body">
-            <h5 class="card-title">名前</h5>
+            <!-- <h5 class="card-title">名前</h5> -->
             <p class="card-text">施術内容記入</p>
         </div>
         <ul class="list-group list-group-flush">
@@ -28,31 +28,32 @@
                 <label class="form-check-label" for="inlineCheckbox2">オフあり</label>
             </li>
             <li class="list-group-item">
-            <div class="col-md-4">
-                <label for="validationCustom01" class="form-label">右上</label>
-                <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
-                <div class="valid-feedback">
-                Looks good!
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="validationCustom01" class="form-label">右目</label>
+                    <input type="text" class="form-control" id="validationCustom01" value="上" required>
+                    <input type="text" class="form-control" id="validationCustom01" value="下" required>
+                
                 </div>
-            </div>
-            <div class="col-md-4">
-                <label for="validationCustom02" class="form-label">左上</label>
-                <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
-                <div class="valid-feedback">
-                Looks good!
+                <div class="col-md-4">
+                    <label for="validationCustom02" class="form-label">左目</label>
+                    <input type="text" class="form-control" id="validationCustom02" value="上" required>
+                    <input type="text" class="form-control" id="validationCustom02" value="下" required>
+                
                 </div>
             </div>
             </li>
             <li class="list-group-item">
-            <div class="col-md-4">
-                <label for="validationCustom01" class="form-label">右下</label>
-                <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
-            
-            </div>
-            <div class="col-md-4">
-                <label for="validationCustom02" class="form-label">左下</label>
-                <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="validationCustom01" class="form-label">まゆ毛</label>
+                    <input type="text" class="form-control" id="validationCustom01" value="右" required>
                 
+                </div>
+                <div class="col-md-4">
+                    <label for="validationCustom02" class="form-label">まゆ毛</label>
+                    <input type="text" class="form-control" id="validationCustom02" value="左" required>
+                </div>
             </div>
             </li>
         </ul>

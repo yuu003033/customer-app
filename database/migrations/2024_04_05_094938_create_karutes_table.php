@@ -11,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('records', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->longText('content');
-            $table->integer('user_id');
+        Schema::create('karutes', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
         });
     }
 
@@ -23,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('records');
+        Schema::dropIfExists('karutes');
     }
 };
