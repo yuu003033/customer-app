@@ -11,13 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('karutes', function (Blueprint $table) {
+        Schema::create('registerCustomers', function (Blueprint $table) {
             $table->id();
-            $table->integer('customer_id');
-            $table->date('visited_date')->comment('来店日');
-            $table->string('image_path');
-            $table->integer('category_id')->comment('メニュー項目');
-            $table->text('text');
             $table->timestamps();
         });
     }
@@ -27,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('karutes');
+        Schema::dropIfExists('registerCustomers');
     }
 };

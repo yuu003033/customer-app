@@ -25,11 +25,11 @@ class HomeController extends Controller
     {
         return view('home');
     }
-    // public function registerCustomoer()
-    // {
-    //     $user = \Auth::user();
-    //     return view('register');
-    // }
+    public function customer()
+    {
+        $user = \Auth::user();
+        return view('customer');
+    }
     public function detail()
     {
         return view('home');
@@ -38,5 +38,9 @@ class HomeController extends Controller
     {
         $user = \Auth::user();
         return view('karute');
+    }
+    public function registerCustomer(){
+        $user = \Auth::user();
+        return view('registerCustomer');
     }
 }

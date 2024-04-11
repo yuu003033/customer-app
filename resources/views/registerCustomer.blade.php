@@ -26,7 +26,7 @@
     </div>
   </div>
   
-  <div class="col-auto">
+  <!-- <div class="col-auto">
     <label class="visually-hidden" for="autoSizingSelect">Preference</label>
     <select class="form-select" id="autoSizingSelect">
       <option selected>メニュー</option>
@@ -34,7 +34,7 @@
       <option value="2">パーマ</option>
       <option value="3">まゆ毛</option>
     </select>
-  </div>
+  </div> -->
   <div class="col-auto">
     <div class="form-check">
       

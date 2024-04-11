@@ -23,4 +23,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Route::get('/register', [App\Http\Controllers\HomeController::class, 'register'])->name('register');
 Route::get('/detail', [App\Http\Controllers\HomeController::class, 'detail'])->name('detail');
 Route::get('/karute', [App\Http\Controllers\HomeController::class, 'karute'])->name('karute');
+Route::get('/customer', [App\Http\Controllers\HomeController::class, 'customer'])->name('customer');
+Route::get('/registerCustomer', [App\Http\Controllers\HomeController::class, 'registerCustomer'])->name('registerCustomer');
 
