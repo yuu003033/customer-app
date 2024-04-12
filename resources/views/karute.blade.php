@@ -1,9 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
-    <div class="card mb-3">
-        <img src="" class="card-img-top" alt="..." style="background-color:blue;">
+    <div class="card" style="width: 50%;">
+        <img src="{{ asset('images/no-img.jpg') }}" class="card-img-top" alt="" style="background-color:blue;" width="100" height="100">
         <div class="card-body">
             <!-- <h5 class="card-title">名前</h5> -->
             <p class="card-text">施術内容記入</p>
@@ -52,9 +53,15 @@
                 </div>
                 <div class="col-md-4">
                     <label for="validationCustom02" class="form-label">まゆ毛</label>
-                    <input type="text" class="form-control" id="validationCustom02" value="左" required>
-                </div>
+                    <input type="text" class="form-control" id="validationCustom02" value="左" required>               
+                </div>  
             </div>
+            </li>
+            <li class="list-group-item">
+                <div class="col-md-4">
+                    <a href="#" class="btn btn-primary">登録</a>
+                    <a href="#" class="btn btn-primary">編集</a>
+                </div>
             </li>
         </ul>
     </div>
