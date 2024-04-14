@@ -57,15 +57,13 @@
                 </div>  
             </div>
             </li>
-            <li class="list-group-item">
-                <div class="col-md-4">
-                    <a href="#" class="btn btn-primary">登録</a>
-                    <a href="#" class="btn btn-primary">編集</a>
-                </div>
-            </li>
         </ul>
     </div>
-</div>
+    <div class="col-md-4">
+        <input class="btn btn-primary" type="button" value="編集">
+        <input class="btn btn-primary" type="submit" value="登録">
+        </div>
+    </div>
 
 
 @endsection
