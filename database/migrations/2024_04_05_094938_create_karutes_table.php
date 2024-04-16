@@ -13,11 +13,10 @@ return new class extends Migration
     {
         Schema::create('karutes', function (Blueprint $table) {
             $table->id();
-            $table->integer('customer_id');
             $table->date('visited_date')->comment('来店日');
             $table->string('image_path');
             $table->integer('category_id')->comment('メニュー項目');
-            $table->text('text');
+            $table->text('text')->comment('コメント');
             $table->timestamps();
         });
     }

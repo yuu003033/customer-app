@@ -22,7 +22,10 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 // Route::get('/register', [App\Http\Controllers\HomeController::class, 'register'])->name('register');
 Route::get('/detail', [App\Http\Controllers\HomeController::class, 'detail'])->name('detail');
-Route::get('/karute', [App\Http\Controllers\KaruteController::class, 'create'])->name('karute');
-Route::get('/customer', [App\Http\Controllers\CustomerController::class, 'create'])->name('customer');
-// Route::get('/registerCustomer', [App\Http\Controllers\HomeController::class, 'registerCustomer'])->name('registerCustomer');
-
+Route::get('/karute', [App\Http\Controllers\KaruteController::class, 'karute'])->name('karute');
+Route::get('/customer/new', [App\Http\Controllers\CustomerController::class, 'new'])->name('new');
+Route::get('/customer/edit', [App\Http\Controllers\HomeController::class, 'edit'])->name('edit');
+Route::get('/customer/update', [App\Http\Controllers\HomeController::class, 'update'])->name('update');
+Route::get('/customer/store', [App\Http\Controllers\HomeController::class, 'store'])->name('store');
+Route::post('/customer/delete', [App\Http\Controllers\HomeController::class, 'delete'])->name('delete');
+Route::get('/customer/trash', [App\Http\Controllers\HomeController::class, 'trash'])->name('trash');

@@ -4,7 +4,7 @@
 
 <div class="container">
     <div class="card" style="width: 50%;">
-        <img src="{{ asset('images/no-img.jpg') }}" class="card-img-top" alt="" style="background-color:blue;" width="100" height="100">
+        <img src="{{ asset('images/no-img.jpg') }}" class="card-img-top" alt="" width="100">
         <div class="card-body">
             <!-- <h5 class="card-title">名前</h5> -->
             <p class="card-text">施術内容記入</p>

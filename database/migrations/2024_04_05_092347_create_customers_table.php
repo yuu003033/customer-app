@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name')->comment('名前');
             $table->string('telephone')->nullable()->defult(null)->comment('電話番号');
+            $table->string('address')->nullable()->defult(null)->comment('住所');
             $table->timestamps();
         });
     }

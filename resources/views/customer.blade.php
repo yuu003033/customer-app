@@ -4,13 +4,6 @@
 <div class="container">
 <form class="row gy-2 gx-3 align-items-center">
   @csrf
-<div class="col-auto">
-  <label class="visually-hidden" for="autoSizingInputGroup">Username</label>
-    <div class="input-group">
-      <div class="input-group-text">会員番号</div>
-      <input type="text" class="form-control" id="autoSizingInputGroup" placeholder="0000">
-    </div>
-  </div>
   <div class="col-auto">
   <label class="visually-hidden" for="autoSizingInputGroup">Username</label>
     <div class="input-group">
