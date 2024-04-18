@@ -28,11 +28,8 @@ class HomeController extends Controller
     
     public function detail()
     {
-        return view('home');
+        return view('detail');
     }
    
-    public function registerCustomer(){
-        $user = \Auth::user();
-        return view('registerCustomer');
-    }
+   
 }

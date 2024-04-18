@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class KaruteController extends Controller
 {
     //カルテ情報
-    public function create(Request $request){
+    public function karute(Request $request){
         return view('karute');
     }
    

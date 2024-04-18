@@ -14,10 +14,10 @@
                 </div>
             </div>
             <div class="col-md-2">
-                <a class="nav-regAccount" href="#">新規登録</a>
+                <a class="nav-regAccount" href="{{ route('new') }}">新規登録</a>
             </div>
             <div class="col-md-2">
-                <a class="nav-trashBox" href="#">ゴミ箱へ</a>        
+                <a class="nav-trashBox" href="{{ route('trashBox') }}">ゴミ箱へ</a>        
             </div>
         </nav>
     </div>

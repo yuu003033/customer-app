@@ -23,9 +23,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Route::get('/register', [App\Http\Controllers\HomeController::class, 'register'])->name('register');
 Route::get('/detail', [App\Http\Controllers\HomeController::class, 'detail'])->name('detail');
 Route::get('/karute', [App\Http\Controllers\KaruteController::class, 'karute'])->name('karute');
-Route::get('/customer/new', [App\Http\Controllers\CustomerController::class, 'new'])->name('new');
-Route::get('/customer/edit', [App\Http\Controllers\HomeController::class, 'edit'])->name('edit');
-Route::get('/customer/update', [App\Http\Controllers\HomeController::class, 'update'])->name('update');
-Route::get('/customer/store', [App\Http\Controllers\HomeController::class, 'store'])->name('store');
-Route::post('/customer/delete', [App\Http\Controllers\HomeController::class, 'delete'])->name('delete');
-Route::get('/customer/trash', [App\Http\Controllers\HomeController::class, 'trash'])->name('trash');
+Route::get('/customer/new', [App\Http\Controllers\CustomerController::class, 'new'])->name('new');// 新規登録
+Route::get('/customer/edit', [App\Http\Controllers\CustomerController::class, 'edit'])->name('edit');// 顧客編集ページ
+Route::get('/customer/update', [App\Http\Controllers\CustomerController::class, 'update'])->name('update');
+Route::get('/customer/store', [App\Http\Controllers\CustomerController::class, 'store'])->name('store');
+Route::get('/customer/trashBox', [App\Http\Controllers\CustomerController::class, 'trashBox'])->name('trashBox');// ゴミ箱
+Route::post('/customer/delete', [App\Http\Controllers\CustomerController::class, 'delete'])->name('delete');//削除
