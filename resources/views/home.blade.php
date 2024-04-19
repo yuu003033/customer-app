@@ -3,6 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
+        <label for="">名前検索</label>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="col-md-8">
                 <div class="container-fluid">

@@ -10,14 +10,14 @@ class CustomerController extends Controller
     public function index(){
         // 一覧ページ
         $user = \Auth::user();
-        $karuteLists = Karute::where('');
-        return view('customer');
+        $karuteLists = Karute::where('user_id', $user['id'])->orderBy('updated_at', 'DESC')->get();
+        return view('customer',compact('user', 'karuteLists'));
     }
     public function new(Request $request){
         // 新規作成ページ
         $data = $request->all();
-
-        $customer_list = Customer::insertGetId([
+        // $user = \Auth::user();
+        $customer_list = Karute::insertGetId([
             'content' => $data['content'], 
             'visited_date' => $data['visited_date'],
             'user_id' => $data['user_id'], 
