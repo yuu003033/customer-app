@@ -24,7 +24,10 @@
     </div>
     <div class="container">
         @foreach($karuteLists as $customer_list)
-        
+        <div>
+            
+        </div>
+
         @endforeach
     </div>
 </div>
