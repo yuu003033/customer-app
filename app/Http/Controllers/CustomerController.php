@@ -11,7 +11,7 @@ class CustomerController extends Controller
         // 一覧ページ
         $user = \Auth::user();
         $karuteLists = Karute::where('user_id', $user['id'])->orderBy('updated_at', 'DESC')->get();
-        return view('customer',compact('user', 'karuteLists'));
+        return view('home',compact('user', 'karuteLists'));
     }
     public function new(Request $request){
         // 新規作成ページ

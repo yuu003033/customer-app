@@ -22,6 +22,11 @@
             </div>
         </nav>
     </div>
+    <div class="container">
+        @foreach($karuteLists as $customer_list)
+        
+        @endforeach
+    </div>
 </div>
 
 
