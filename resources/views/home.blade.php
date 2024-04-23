@@ -2,12 +2,13 @@
 
 @section('content')
 <div class="container">
+
     <div class="row justify-content-center">
         <label for="">名前検索</label>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="col-md-8">
                 <div class="container-fluid">
-                    <form class="d-flex" role="search">
+                    <form method="POST" class="d-flex" role="search" action="/store">
                         @csrf
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>    
@@ -22,13 +23,20 @@
             </div>
         </nav>
     </div>
-    <div class="container">
-        @foreach($karuteLists as $customer_list)
-        <div>
-            
-        </div>
-
-        @endforeach
+    <div class="row justify-content-center">
+        <label for="">登録リスト</label>
+ 
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="col-md-8">
+                <div class="container-fluid">
+                    <form action="/store" method="get" class="d-flex">
+                        @csrf
+                        <span class="body-area"></span>
+                       
+                    </form>
+                </div>
+            </div>
+        </nav>
     </div>
 </div>
 

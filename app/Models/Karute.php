@@ -13,6 +13,5 @@ class Karute extends Model
         'image_path',
         'category_id',
         'text'
-
     ];
 }
