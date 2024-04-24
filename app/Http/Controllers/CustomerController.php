@@ -15,16 +15,7 @@ class CustomerController extends Controller
     }
     public function new(){
         // 新規作成ページ
-        $data = $request->all();
-        // $user = \Auth::user();
-        $customer_list = Karute::insertGetId([
-            // 'content' => $data['content'], 
-            'visited_date' => $data['visited_date'],
-            'user_id' => $data['user_id'], 
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
-            'status' => 1
-        ]);
+        return view('new');
         // リダイレクト処理
         return redirect()->back();
     }
@@ -32,8 +23,8 @@ class CustomerController extends Controller
         $user = \Auth::user();
         // $data = $request->all();
         
-        return view('store', compact('user'));
-        // return redirect()->back();
+        // return view('store', compact('user'));
+        return redirect()->back();
     }
     public function create(Request $request){
         // 新規作成処理

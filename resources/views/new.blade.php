@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-<form method="POST" class="row gy-2 gx-3 align-items-center" action="/store">
+<form method="POST" class="row gy-2 gx-3 align-items-center" action="{{ route('store') }}">
   @csrf
   <div class="col-auto">
   <label class="visually-hidden" for="autoSizingInputGroup">Username</label>

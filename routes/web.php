@@ -26,6 +26,6 @@ Route::get('/karute', [App\Http\Controllers\KaruteController::class, 'karute'])-
 Route::get('/customer/new', [App\Http\Controllers\CustomerController::class, 'new'])->name('new');// 新規登録
 Route::get('/customer/edit', [App\Http\Controllers\CustomerController::class, 'edit'])->name('edit');// 顧客編集ページ
 Route::get('/customer/update', [App\Http\Controllers\CustomerController::class, 'update'])->name('update');
-Route::get('/customer/store', [App\Http\Controllers\CustomerController::class, 'store'])->name('store');
+Route::post('/customer/store', [App\Http\Controllers\CustomerController::class, 'store'])->name('store');
 Route::get('/customer/trashBox', [App\Http\Controllers\CustomerController::class, 'trashBox'])->name('trashBox');// ゴミ箱
 Route::post('/customer/delete', [App\Http\Controllers\CustomerController::class, 'delete'])->name('delete');//削除
