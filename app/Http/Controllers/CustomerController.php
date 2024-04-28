@@ -10,7 +10,7 @@ class CustomerController extends Controller
     public function index(){
         // 一覧ページ
         $karuteLists = $this->karute->findAllkakute();
-        return view('home',compact('user', 'karuteLists'));
+        return view('home',compact('karuteLists'));
     }
     public function new(){
         // 新規作成ページ
@@ -19,14 +19,13 @@ class CustomerController extends Controller
         return redirect()->back();
     }
     public function store(Request $request){
-        $registerCustomer = $this->karute->InsertKarute($request);
 
         return redirect()->route('home');
     }
     public function create(Request $request){
         // 新規作成処理
         $user = \Auth::user();
-        $customer_list = Karute::insertGetId([
+        $customer_list = Customer::insertGetId([
             'content' => $data['content'], 
             'visited_date' => $data['visited_date'],
             'user_id' => $data['user_id'], 
