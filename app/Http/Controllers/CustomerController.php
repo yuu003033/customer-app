@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Customer;
 
 class CustomerController extends Controller
 {
@@ -19,25 +20,33 @@ class CustomerController extends Controller
         return redirect()->back();
     }
     public function store(Request $request){
-
+        // 登録処理
         return redirect()->route('home');
     }
     public function create(Request $request){
+        try{
         // 新規作成処理
-        $user = \Auth::user();
-        $customer_list = Customer::insertGetId([
-            'content' => $data['content'], 
-            'visited_date' => $data['visited_date'],
-            'user_id' => $data['user_id'], 
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
-            'status' => 1
-        ]);
-        return view('create', compact('user'));
+        $customer = new Csutomer();
+        // フォームから送信されたデータ取得し、インスタンスの属性に代入する
+        $customer->name = $request->input('name');
+        $customer->telephone = $request->input('telephone');
+        $customer->zipcode = $request->input('zipcode');
+        $customer->prefecture = $request->input('prefecture');
+        $customer->city = $request->input('city');
+        $customer->address = $request->input('address');
+
+        // DBに保存
+        $customer->save();
+        
+            return redirect('/')->with('message', '登録が完了しました！');
+        } catch (\Exception $e) {
+            return back()->with('message', '登録に失敗しました。' . $e->getMessage());
+        }
+    
     }
     public function edit(Request $request){
         // 編集ページ
-        return view('customer');
+        return view('index');
     }
     public function update(Request $request){
         // 編集処理

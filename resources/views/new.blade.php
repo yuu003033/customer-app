@@ -34,6 +34,7 @@
         <option value="2">東京</option>
         <option value="3">埼玉</option>
         <option value="4">千葉</option>
+        <option value="5">etc..</option>
       </select>
     </div>
   
@@ -45,16 +46,9 @@
     </div>
   </div>
   <div class="col-auto">
-  <label class="visually-hidden" for="autoSizingInputGroup">町名・番地</label>
-    <div class="input-group">
-      <div class="input-group-text">町名・番地</div>
-      <input type="text" class="form-control" name="address1" id="autoSizingInputGroup">
-    </div>
-  </div>
-  <div class="col-auto">
   <label class="visually-hidden" for="autoSizingInputGroup">建物名等</label>
     <div class="input-group">
-      <div class="input-group-text">建物名等</div>
+      <div class="input-group-text">その他住所</div>
       <input type="text" class="form-control" name="address2" id="autoSizingInputGroup">
     </div>
   </div>

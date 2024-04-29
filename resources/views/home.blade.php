@@ -29,11 +29,17 @@
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="col-md-8">
                 <div class="container-fluid">
-                    <form action="/store" method="get" class="d-flex">
-                        @csrf
-                        <span class="body-area"></span>
-                       
-                    </form>
+                    <table>
+                        <tr>
+                            <th>ID</th>
+                            <th>名前</th>
+                            <th>来店履歴</th>
+                            <th>メニュー</th>
+                        </tr>
+                        <tr>
+                            <td></td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </nav>
