@@ -24,7 +24,7 @@
         </nav>
     </div>
     <div class="row justify-content-center">
-        <label for="">登録リスト</label>
+        <label for="{{ route('store') }}" method="POST">登録リスト</label>
  
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="col-md-8">
