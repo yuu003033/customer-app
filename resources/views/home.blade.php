@@ -31,14 +31,16 @@
                 <div class="container-fluid">
                     <table>
                         <tr>
+                    @foreach($customers as $customer)
                             <th>ID</th>
                             <th>名前</th>
                             <th>来店履歴</th>
                             <th>メニュー</th>
                         </tr>
                         <tr>
-                            <td></td>
+                            <td>{{ $customer->id }}</td>
                         </tr>
+                    @endforeach
                     </table>
                 </div>
             </div>

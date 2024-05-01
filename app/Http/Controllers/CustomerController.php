@@ -26,19 +26,20 @@ class CustomerController extends Controller
     public function create(Request $request){
         try{
         // 新規作成処理
-        $customer = new Csutomer();
+        $customers = new Csutomer();
+     
         // フォームから送信されたデータ取得し、インスタンスの属性に代入する
-        $customer->name = $request->input('name');
-        $customer->telephone = $request->input('telephone');
-        $customer->zipcode = $request->input('zipcode');
-        $customer->prefecture = $request->input('prefecture');
-        $customer->city = $request->input('city');
-        $customer->address = $request->input('address');
+        $customers->name = $request->inputs['name'];
+        $customers->telephone = $request->inputs['telephone'];
+        $customers->zipcode = $request->inputs['zipcode'];
+        $customers->prefecture = $request->inputs['prefecture'];
+        $customers->city = $request->inputs['city'];
+        $customers->address = $request->inputs['address'];
 
         // DBに保存
-        $customer->save();
+        $customers->save();
         
-            return redirect('/')->with('message', '登録が完了しました！');
+            return redirect('index')->with('message', '登録が完了しました！');
         } catch (\Exception $e) {
             return back()->with('message', '登録に失敗しました。' . $e->getMessage());
         }
