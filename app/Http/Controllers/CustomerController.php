@@ -21,13 +21,15 @@ class CustomerController extends Controller
     }
     public function store(Request $request){
         // 登録処理
-        return redirect()->route('home');
+        Customer::create($request->all());
+        return redirect()->route('customer.home');
     }
     public function create(Request $request){
         try{
         // 新規作成処理
+
         $customers = new Csutomer();
-     
+        
         // フォームから送信されたデータ取得し、インスタンスの属性に代入する
         $customers->name = $request->inputs['name'];
         $customers->telephone = $request->inputs['telephone'];

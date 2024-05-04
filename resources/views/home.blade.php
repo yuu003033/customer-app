@@ -25,22 +25,26 @@
     </div>
     <div class="row justify-content-center">
         <label for="{{ route('store') }}" method="POST">登録リスト</label>
- 
+        @csrf
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="col-md-8">
                 <div class="container-fluid">
-                    <table>
+                    <table class="w-100 table table-hover">
                         <tr>
-                    @foreach($customers as $customer)
+                 
                             <th>ID</th>
                             <th>名前</th>
                             <th>来店履歴</th>
                             <th>メニュー</th>
                         </tr>
                         <tr>
-                            <td>{{ $customer->id }}</td>
+                        <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
-                    @endforeach
+                    
                     </table>
                 </div>
             </div>
