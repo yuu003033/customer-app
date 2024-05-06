@@ -11,22 +11,21 @@ class CustomerController extends Controller
     public function index(){
         // 一覧ページ
         $karuteLists = $this->karute->findAllkakute();
-        return view('home',compact('karuteLists'));
+        return view('home',compact('karuteLists','customer'));
     }
     public function new(){
         // 新規作成ページ
         return view('new');
         // リダイレクト処理
-        return view('new');
     }
     public function store(Request $request){
         // 登録処理
-        $customers = Customer::with($request->all());
+        $karuteLists  = Customer::find($request->all());
         // return redirect()->route('store');
-        return view('home');
+        return view('home',compact('karuteLists'));
     }
     public function create(Request $request){
-        try{
+        // try{
         // 新規顧客作成処理
 
         $customers = new Csutomer();
@@ -42,11 +41,12 @@ class CustomerController extends Controller
         // DBに保存
         $customers->save();
         
-            return redirect('index')->with('message', '登録が完了しました！');
-        } catch (\Exception $e) {
-            return back()->with('message', '登録に失敗しました。' . $e->getMessage());
-        }
-    
+        //     return redirect('home')->with('message', '登録が完了しました！');
+        // } catch (\Exception $e) {
+        //     return back()->with('message', '登録に失敗しました。' . $e->getMessage());
+        // }
+        $customersList = new Customer('customers');
+        $customersList->create();
     }
     public function edit(Request $request){
         // 編集ページ

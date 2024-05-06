@@ -37,7 +37,7 @@
                             <th>来店履歴</th>
                             <th>メニュー</th>
                         </tr>
-                        @foreach($karuteLists as  $customers)
+                    
                         <tr>
                     
                         <td></td>
@@ -46,7 +46,7 @@
                             <td></td>
                             <td></td>
                         </tr>
-                    @endforeach
+                    
                     </table>
                 </div>
             </div>
