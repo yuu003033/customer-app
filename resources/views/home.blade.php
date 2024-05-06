@@ -31,20 +31,22 @@
                 <div class="container-fluid">
                     <table class="w-100 table table-hover">
                         <tr>
-                 
+                
                             <th>ID</th>
                             <th>名前</th>
                             <th>来店履歴</th>
                             <th>メニュー</th>
                         </tr>
+                        @foreach($karuteLists as  $customers)
                         <tr>
+                    
                         <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
                         </tr>
-                    
+                    @endforeach
                     </table>
                 </div>
             </div>

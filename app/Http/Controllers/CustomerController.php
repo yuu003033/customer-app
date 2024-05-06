@@ -17,16 +17,17 @@ class CustomerController extends Controller
         // 新規作成ページ
         return view('new');
         // リダイレクト処理
-        return redirect()->back();
+        return view('new');
     }
     public function store(Request $request){
         // 登録処理
-        Customer::create($request->all());
-        return redirect()->route('customer.home');
+        $customers = Customer::with($request->all());
+        // return redirect()->route('store');
+        return view('home');
     }
     public function create(Request $request){
         try{
-        // 新規作成処理
+        // 新規顧客作成処理
 
         $customers = new Csutomer();
         

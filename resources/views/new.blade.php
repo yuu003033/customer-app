@@ -8,14 +8,15 @@
   <label class="visually-hidden" for="autoSizingInputGroup">Username</label>
     <div class="input-group">
       <div class="input-group-text">お名前</div>
-      <input type="text" class="form-control" id="autoSizingInputGroup" placeholder="name">
+      <input type="text" class="form-control" id="autoSizingInputGroup" 
+      name="name" placeholder="name">
     </div>
   </div>
   <div class="col-auto">
     <label class="visually-hidden" for="autoSizingInputGroup">Username</label>
     <div class="input-group">
       <div class="input-group-text">TEL</div>
-      <input type="text" class="form-control" id="autoSizingInputGroup" placeholder="000-0000-0000">
+      <input type="text" class="form-control" id="autoSizingInputGroup"  name="telephone" placeholder="000-0000-0000">
     </div>
   </div>
   
