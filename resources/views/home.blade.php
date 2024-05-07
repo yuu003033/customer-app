@@ -30,23 +30,34 @@
             <div class="col-md-8">
                 <div class="container-fluid">
                     <table class="w-100 table table-hover">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>名前</th>
+                                <th>最終来店履歴</th>
+                                <th>メニュー</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        
+                        <tbody class="tr_lists">
+                    @foreach( $karuteLists as $list)
                         <tr>
-                
-                            <th>ID</th>
-                            <th>名前</th>
-                            <th>来店履歴</th>
-                            <th>メニュー</th>
-                        </tr>
-                    
-                        <tr>
-                    
-                        <td></td>
+                            <td>{{ ($list->id) }}</td>
+                            <td>{{ ($list->name) }}</td>
                             <td></td>
                             <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    
+                            <td>
+                                <button type="button" name="trashBox" onclick="location.href='{{ route('trashBox')}}'" style="background:none; border:none;">
+                                <i id='deleteButton(index)' class="fa-solid fa-trash-can"></i>
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" onclick="">表示</button>
+                            </td>
+                            </tr>
+                    @endforeach
+                        </tbody>
                     </table>
                 </div>
             </div>
