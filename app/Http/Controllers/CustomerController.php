@@ -53,8 +53,8 @@ class CustomerController extends Controller
     }
     public function trashBox(Request $request){
         // 削除ページ
-      
-        return view('trashbox');
+      $karuteLists = Customer::find();
+        return view('home',compact('karuteLists'));
     }
     public function delete(Request $request){
         // 削除処理
