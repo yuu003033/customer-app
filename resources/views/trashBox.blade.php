@@ -11,12 +11,12 @@
                     <tbody>
                         
                             @foreach( $karuteLists as $list )
-                            <tr>
-                                <th>{{ ($list->id) }}</th>
-                                <th>>{{ ($list->name) }}</th>
-                                <th>最終来店履歴</th>
-                                <th class="float-end">元に戻す</th>
-                                <th><button type="submit" class="btn-outline-primary btn-lg">削除</button></th>
+                            <tr >
+                                <td>{{ ($list->id) }}</td>
+                                <td>{{ ($list->name) }}</td>
+                                <td>最終来店履</td>
+                                <td class="float-end">元に戻す</td>
+                                <td>button type="submit" class="btn-outline-primary btn-lg">削除</td></td>
                             </tr>
                             @endforeach
                         </tbody>

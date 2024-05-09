@@ -51,13 +51,14 @@ class CustomerController extends Controller
         
         return view('customer');
     }
-    public function trashBox(Request $request){
+    public function trashBox(){
         // 削除ページ
-      $karuteLists = Customer::find();
-        return view('home',compact('karuteLists'));
+     $karuteLists = Custommer::getTrash();
+      return redirect()->back();
     }
     public function delete(Request $request){
         // 削除処理
-        return view('customer');
+        $result = Customer::delete($request->id);
+        return redirect()->route('home');
     }
 }
