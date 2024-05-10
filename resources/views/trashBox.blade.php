@@ -4,10 +4,10 @@
 <div class="container">
 <div class="row justify-content-center">
           <div class="row justify-content-flex-start">
-              <div class="col-12 col-md-6">
+              <div class="col-md-8">
                   <label for="trash-input">ゴミ箱内</label><i id='/' class="fa-solid fa-trash-can"></i>
                 
-                    <table class="w-1 table table-hover">
+                    <table class="w-100 table table-hover">
 
                     <thead>
                             <tr>
@@ -19,15 +19,15 @@
                             </tr>
                         </thead>
                     <tbody>
-                        @foreach ($karuteLists as $list)
-                            <tr id="{{$list->id}}">
+                    
+                            <tr id="">
                                 <td></td>
                                 <td></td>
                                 <td></td>
                                 <td><button type="submit" class="btn-outline-primary btn-lg">元に戻す</td>
                                 <td><button type="submit" class="btn-outline-primary btn-lg">削除</td>
                             </tr>
-                        @endforeach
+             
                         </tbody>
                     </table>
                     <form action="/delete" method="POST">
