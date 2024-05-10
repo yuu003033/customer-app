@@ -53,12 +53,12 @@ class CustomerController extends Controller
     }
     public function trashBox(){
         // 削除ページ
-     $karuteLists = Custommer::getTrash();
-      return redirect()->back();
+     
+      return view('trashBox');
     }
-    public function delete(Request $request){
+    public function delete(Request $id){
         // 削除処理
-        $result = Customer::delete($request->id);
+    
         return redirect()->route('home');
     }
 }

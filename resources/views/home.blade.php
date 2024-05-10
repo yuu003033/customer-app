@@ -41,16 +41,16 @@
                         </thead>
                         
                         <tbody class="tr_lists">
-                    @foreach( $karuteLists as $list)
-                        <tr>
+                    @foreach($karuteLists as $list)
+                        <tr id="{{$list->id}}">
                             <td>{{ ($list->id) }}</td>
                             <td>{{ ($list->name) }}</td>
                             <td></td>
                             <td></td>
                             <td>
-                                <button type="button" name="trashBox" onclick="location.href='{{ route('trashBox')}}'" style="background:none; border:none;">
+                                <span type="submit" class="trash-area" onClick="({{$list->id}})">
                                 <i id='deleteButton(index)' class="fa-solid fa-trash-can"></i>
-                                </button>
+                                </span>
                             </td>
                             <td>
                                 <button type="button" onclick="">表示</button>
