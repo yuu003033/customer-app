@@ -21,7 +21,7 @@ class CustomerController extends Controller
         $customers->zipcode = $request->zipcode;
         $customers->prefecture = $request->prefecture;
         $customers->city = $request->city;
-        $customers->address = $request->address;
+        $customers->status = $request->status;
 
         // DBに保存
         $customers->save();

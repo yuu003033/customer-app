@@ -14,6 +14,6 @@ class Customer extends Model
         'zipcode',
         'prefecture',
         'city',
-        'address'
+        'status',
     ];
 }

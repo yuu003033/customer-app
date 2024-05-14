@@ -9,7 +9,8 @@ class Karute extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'visited_date',
+        'last_visited',
+        'visited_record',
         'image_path',
         'category_id',
         'text'

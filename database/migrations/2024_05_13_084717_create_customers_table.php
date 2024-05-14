@@ -14,8 +14,12 @@ return new class extends Migration
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
             $table->string('name')->comment('名前');
-            $table->string('telephone')->nullable()->defult(null)->comment('電話番号');
-            $table->string('address')->nullable()->defult(null)->comment('その他住所');
+            $table->string('telephone')->comment('電話番号');
+            $table->string('zipcode')->comment('郵便番号')->nullable()->default(null);
+            $table->string('prefecture')->comment('都道府県')->nullable()->default(null);
+            $table->string('city')->comment('市区町村')->nullable()->default(null);
+            $table->integer('status')->default(0)->comment('ステータス');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
