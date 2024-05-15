@@ -13,16 +13,16 @@ class CustomerController extends Controller
     }
     public function store(Request $request){
         // 登録処理
-        $customers = new Customer($request->all());
-        
+        $customers = new Customer;
+        // dd($customers);
         // フォームから送信されたデータ取得し、インスタンスの属性に代入する
         $customers->name = $request->name;
         $customers->telephone = $request->telephone;
         $customers->zipcode = $request->zipcode;
         $customers->prefecture = $request->prefecture;
         $customers->city = $request->city;
-        $customers->status = $request->status;
-
+        $customers->status = $request->status[0];
+        // dd($customers);
         // DBに保存
         $customers->save();
           // リダイレクト処理
@@ -51,10 +51,11 @@ class CustomerController extends Controller
         
         return view('customer');
     }
-    public function trashBox(){
+    public function trashBox(Request $request){
         // 削除ページ
-     
-      return view('trashBox');
+        $karuteLists = Customer::find($request->id)->fill(['status'=>1])->delete();
+        // dd($karuteLists);
+        return view('trashBox', compact('karuteLists'));
     }
     public function delete(Request $id){
         // 削除処理
