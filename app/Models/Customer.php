@@ -15,5 +15,7 @@ class Customer extends Model
         'prefecture',
         'city',
         'status',
+        'deleted_at'
     ];
+
 }

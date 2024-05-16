@@ -51,11 +51,14 @@ class CustomerController extends Controller
         
         return view('customer');
     }
-    public function trashBox(Request $request){
+    public function trashBox(Request $idt){
         // 削除ページ
-        $karuteLists = Customer::find($request->id)->fill(['status'=>1])->delete();
-        // dd($karuteLists);
-        return view('trashBox', compact('karuteLists'));
+        $karuteLists = Customer::where([
+            ['id', $id],
+            ['deleted_at', 1],
+        ])->get();
+       
+        return $karuteLists;
     }
     public function delete(Request $id){
         // 削除処理
