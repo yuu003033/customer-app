@@ -21,7 +21,9 @@ class CustomerController extends Controller
         $customers->zipcode = $request->zipcode;
         $customers->prefecture = $request->prefecture;
         $customers->city = $request->city;
-        $customers->status = $request->status[0];
+        $customers->address2 = $request->address2;
+        // $customers->status = 0;
+
         // dd($customers);
         // DBに保存
         $customers->save();
@@ -51,14 +53,17 @@ class CustomerController extends Controller
         
         return view('customer');
     }
-    public function trashBox(Request $idt){
+    public function changeStatus(){
+        $customer = Customer::find($reuest->id);
+        $customer = Customer::fill(['status->1']);
+    
+        return redirect()->route('trashBox');
+    }
+    public function trashBox(){
         // 削除ページ
-        $karuteLists = Customer::where([
-            ['id', $id],
-            ['deleted_at', 1],
-        ])->get();
-       
-        return $karuteLists;
+        $karuteLists = Customer::where('status',1)->get();
+    //    dd($karuteLists);
+        return view('trashBox', compact('karuteLists'));
     }
     public function delete(Request $id){
         // 削除処理

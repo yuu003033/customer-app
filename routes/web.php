@@ -28,4 +28,5 @@ Route::get('/customer/edit', [App\Http\Controllers\CustomerController::class, 'e
 Route::get('/customer/update', [App\Http\Controllers\CustomerController::class, 'update'])->name('update');
 Route::post('/customer/store', [App\Http\Controllers\CustomerController::class, 'store'])->name('store');
 Route::get('/customer/trashBox', [App\Http\Controllers\CustomerController::class, 'trashBox'])->name('trashBox');// ゴミ箱
+Route::post('/customer/changeStatus', [App\Http\Controllers\CustomerController::class, 'changeStatus'])->name('changeStatus');// ゴミ箱切り替え
 Route::post('/customer/delete{id}', [App\Http\Controllers\CustomerController::class, 'delete'])->name('delete');//削除

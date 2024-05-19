@@ -21,6 +21,7 @@
             <div class="col-md-2">
                 <a class="nav-trashBox" href="{{ route('trashBox') }}">ゴミ箱へ</a>        
             </div>
+
         </nav>
     </div>
     <div class="row justify-content-center">
@@ -48,9 +49,14 @@
                             <td></td>
                             <td></td>
                             <td>
-                                <span type="submit" class="trash-area" onClick="({{$list->id}})">
+                                <form action="/trashBox" method="POST">
+                                @csrf
+                                <input type="hidden" name="id" value="{{$list->id}}">
+                                <button type="button" class="trash-area" onClick="trashBox({{$list->id}})">
                                 <i id='deleteButton(index)' class="fa-solid fa-trash-can"></i>
-                                </span>
+                                </button>
+                                </form>
+                                
                             </td>
                             <td>
                                 <button type="button" onclick="">表示</button>

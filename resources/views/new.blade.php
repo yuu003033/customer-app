@@ -29,7 +29,7 @@
     </label>
     </div>
     <div class="col-auto">
-      <select class="form-select" id="inputGroupSelect01">
+      <select class="form-select" id="inputGroupSelect01" name="prefecture">
         <option selected>都道府県</option>
         <option value="1">神奈川</option>
         <option value="2">東京</option>
