@@ -51,8 +51,8 @@
                             <td>
                                 <form action="/trashBox" method="POST">
                                 @csrf
-                                <input type="hidden" name="id" value="{{$list->id}}">
-                                <button type="button" class="trash-area" onClick="trashBox({{$list->id}})">
+                                <input type="hidden" name="trashBox" value="{{$list->id}}">
+                                <button type="submit" class="trash-area">
                                 <i id='deleteButton(index)' class="fa-solid fa-trash-can"></i>
                                 </button>
                                 </form>

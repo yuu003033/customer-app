@@ -53,8 +53,8 @@ class CustomerController extends Controller
         
         return view('customer');
     }
-    public function changeStatus(){
-        $customer = Customer::find($reuest->id);
+    public function changeStatus($id){
+        $customer = Customer::find($request->id);
         $customer = Customer::fill(['status->1']);
     
         return redirect()->route('trashBox');
