@@ -19,6 +19,9 @@
                             </tr>
                         </thead>
                     <tbody>
+                        <form method="POST" action="">
+                            @csrf
+                           
                     @foreach($karuteLists as $list)
                             <tr id="{{$list->id}}">
                                 <td>{{ ($list->id) }}</td>
@@ -27,6 +30,7 @@
                                 <td><button type="submit" class="btn-outline-primary btn-lg">元に戻す</td>
                                 <td><button type="submit" class="btn-outline-primary btn-lg">削除</td>
                             </tr>
+                        </form>
                     @endforeach
                         </tbody>
                     </table>

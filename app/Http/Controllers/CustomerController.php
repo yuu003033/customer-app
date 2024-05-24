@@ -21,7 +21,7 @@ class CustomerController extends Controller
         $customers->zipcode = $request->zipcode;
         $customers->prefecture = $request->prefecture;
         $customers->city = $request->city;
-        $customers->address2 = $request->address2;
+        // $customers->address2 = $request->address2;
         // $customers->status = 0;
 
         // dd($customers);
@@ -31,16 +31,9 @@ class CustomerController extends Controller
         return redirect()->route('home');
     }
     public function create(Request $request){
-        // try{
-        // 新規顧客作成処理
 
-       
-        
-        //     return redirect('home')->with('message', '登録が完了しました！');
-        // } catch (\Exception $e) {
-        //     return back()->with('message', '登録に失敗しました。' . $e->getMessage());
-        // }
-        // $customersList = new Customer('customers');
+        // 新規顧客作成処理
+      
         $customersList->create();
     }
     public function edit(Request $request){
@@ -54,9 +47,10 @@ class CustomerController extends Controller
         return view('customer');
     }
     public function changeStatus($id){
-        $customer = Customer::find($request->id);
-        $customer = Customer::fill(['status->1']);
-    
+        $customer = Customer::find($id);
+        // dd($customer);
+        $customer->fill(['status'=>1])->save();
+      
         return redirect()->route('trashBox');
     }
     public function trashBox(){
@@ -67,7 +61,7 @@ class CustomerController extends Controller
     }
     public function delete(Request $id){
         // 削除処理
-    
+        Customer::onlyTrashed()->where('id',$list->id)->delete();   
         return redirect()->route('home');
     }
 }

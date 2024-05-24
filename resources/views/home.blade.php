@@ -8,7 +8,7 @@
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="col-md-8">
                 <div class="container-fluid">
-                    <form method="POST" class="d-flex" role="search" action="/store">
+                    <form method="POST" class="d-flex" role="search" action="{{route('store')}}">
                         @csrf
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>    
@@ -25,7 +25,7 @@
         </nav>
     </div>
     <div class="row justify-content-center">
-        <label for="{{ route('store') }}" method="POST">登録リスト</label>
+            <label for="/" method="POST">登録リスト</label>
         @csrf
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="col-md-8">
@@ -49,17 +49,17 @@
                             <td></td>
                             <td></td>
                             <td>
-                                <form action="/trashBox" method="POST">
+                                <form method="POST" action="{{ route('changeStatus',['id'=>$list->id]) }}">
                                 @csrf
-                                <input type="hidden" name="trashBox" value="{{$list->id}}">
-                                <button type="submit" class="trash-area">
-                                <i id='deleteButton(index)' class="fa-solid fa-trash-can"></i>
-                                </button>
+                                    <input type="hidden" name="trashBox" value="{{$list->id}}">
+                                    <button type="submit" class="trash-area">
+                                    <i id='deleteButton(index)' class="fa-solid fa-trash-can"></i>
+                                    </button>
                                 </form>
                                 
                             </td>
                             <td>
-                                <button type="button" onclick="">表示</button>
+                                <button type="button" class="btn btn-primary">詳細</button>
                             </td>
                             </tr>
                     @endforeach
