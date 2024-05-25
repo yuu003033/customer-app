@@ -59,7 +59,8 @@
                                 
                             </td>
                             <td>
-                                <button type="button" class="btn btn-primary">詳細</button>
+                                <input type="hidden" name="karute">
+                                <button type="submit" class="btn btn-primary">詳細</button>
                             </td>
                             </tr>
                     @endforeach

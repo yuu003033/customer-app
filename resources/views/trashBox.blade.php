@@ -28,7 +28,7 @@
                                 <td>{{ ($list->name) }}</td>
                                 <td></td>
                                 <td><button type="submit" class="btn-outline-primary btn-lg">元に戻す</td>
-                                <td><button type="submit" class="btn-outline-primary btn-lg">削除</td>
+                                <td><button type="button" onClick="deleteConfirm()" name="delete" class="btn-outline-primary btn-lg">削除</td>
                             </tr>
                         </form>
                     @endforeach
