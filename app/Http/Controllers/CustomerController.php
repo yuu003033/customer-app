@@ -59,9 +59,14 @@ class CustomerController extends Controller
     //    dd($karuteLists);
         return view('trashBox', compact('karuteLists'));
     }
-    public function delete(Request $id){
+    public function delete(Request $request){
         // 削除処理
-        Customer::onlyTrashed()->where('id',$list->id)->delete();   
+        $karuteLists = Customer::find($request->list)->delete();
+        dd($request->list);
         return redirect()->route('home');
+    }
+    public function restore($id){
+        Customer::where($id)->update(['deleted_at' => null]);
+        return back();
     }
 }

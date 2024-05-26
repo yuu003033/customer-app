@@ -30,3 +30,4 @@ Route::post('/customer/store', [App\Http\Controllers\CustomerController::class, 
 Route::get('/customer/trashBox', [App\Http\Controllers\CustomerController::class, 'trashBox'])->name('trashBox');// ゴミ箱
 Route::post('/customer/changeStatus/{id}', [App\Http\Controllers\CustomerController::class, 'changeStatus'])->name('changeStatus');// ゴミ箱切り替え
 Route::post('/customer/delete{id}', [App\Http\Controllers\CustomerController::class, 'delete'])->name('delete');//削除
+Route::get('/customer/restore/{id}', [App\Http\Controllers\CustomerController::class, 'restore'])->name('restore');// データ復活
