@@ -77,5 +77,6 @@
             @yield('content')
         </main>
     </div>
+    <script src="{{url('js/main.js') }}"></script>
 </body>
 </html>
