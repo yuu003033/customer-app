@@ -25,7 +25,15 @@
                                 <td>{{ ($list->id) }}</td>
                                 <td>{{ ($list->name) }}</td>
                                 <td></td>
-                                <td><button type="submit" class="btn-outline-primary btn-lg">元に戻す</td>
+                                <td>
+                                @if($list['status'] === 1)
+                                    <form action="{{ route('restore',['id'=>$list->id]) }}">
+                                        <input type="hidden" name="list_id" value="{{$list['id']}}">
+                                    
+                                        <button type="submit" class="btn-outline-primary btn-lg">元に戻す</td>
+                                    </form>
+                                @endif
+                                    
                                 <td>
                                 @if($list['status'] === 1)
                                     <form action="{{ route('delete', ['id'=>$list->id]) }}" method="POST">

@@ -3,8 +3,8 @@
 @section('content')
 <div class="container">
   <h1>顧客詳細</h1>
-  <label for="">ID：</label>
-  <label for="">名前：</label>
+  <label for="">ID：{{ ($list->id) }}</label>
+  <label for="">名前：{{ ($list->name) }}</label>
   <div class="row">
     <div class="col-4">
       <div id="list-example" class="list-group">

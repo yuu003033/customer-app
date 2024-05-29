@@ -59,19 +59,16 @@ class CustomerController extends Controller
     //    dd($karuteLists);
         return view('trashBox', compact('karuteLists'));
     }
-    // public function delete($id){
-    //     // 削除処理
-    //     $karuteLists = Customer::find($id);
-    //     $karuteLists->delete();
-    //     // dd($id);
-    //     return redirect()->route('home');
-    // }
     public function delete(Request $request){
+         // 削除処理
         $karuteLists = Customer::find($request->list_id)->delete();
         return redirect()->route('home');
     }
     public function restore($id){
-        Customer::where($id)->update(['deleted_at' => null]);
-        return back();
+        $customer = Customer::find($id);
+        // dd($customer);
+        $customer->fill(['status'=>0])->save();
+      
+        return redirect()->route('home');
     }
 }

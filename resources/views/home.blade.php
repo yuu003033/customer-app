@@ -59,7 +59,7 @@
                                 
                             </td>
                             <td>
-                                <input type="hidden" name="karute">
+                                <input type="hidden" name="detail">
                                 <button type="submit" class="btn btn-primary">詳細</button>
                             </td>
                             </tr>

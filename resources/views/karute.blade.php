@@ -3,7 +3,9 @@
 @section('content')
 
 <div class="container">
-    <div class="card" style="width: 50%;">
+    <form action="{{ route('') }}" method="POST">
+    @csrf
+    <div class="card" style="width: 100%;">
         <img src="{{ asset('images/no-img.jpg') }}" class="card-img-top" alt="" width="100">
         <div class="card-body">
             <!-- <h5 class="card-title">名前</h5> -->
@@ -64,6 +66,6 @@
         <input class="btn btn-primary" type="submit" value="登録">
         </div>
     </div>
-
-
+    </form>
+</div>
 @endsection
