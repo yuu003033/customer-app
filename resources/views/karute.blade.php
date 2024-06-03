@@ -3,9 +3,9 @@
 @section('content')
 
 <div class="container">
-    <form action="{{ route('') }}" method="POST">
+    <form action="{{ route('karute') }}" method="POST">
     @csrf
-    <div class="card" style="width: 100%;">
+    <div class="card" style="width: 50%;">
         <img src="{{ asset('images/no-img.jpg') }}" class="card-img-top" alt="" width="100">
         <div class="card-body">
             <!-- <h5 class="card-title">名前</h5> -->

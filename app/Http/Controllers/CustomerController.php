@@ -71,4 +71,15 @@ class CustomerController extends Controller
       
         return redirect()->route('home');
     }
+    public function detail($id)
+    {
+        $customer = Customer::find($id);
+        
+        return view('detail', compact('customer'));
+    }
+    public function deleteAll(){
+    
+        $customers = Customer::where('status',1)->get();
+         return redirect()->route('home');
+    }
 }

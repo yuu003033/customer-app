@@ -2,9 +2,11 @@
 
 @section('content')
 <div class="container">
+
   <h1>顧客詳細</h1>
-  <label for="">ID：{{ ($list->id) }}</label>
-  <label for="">名前：{{ ($list->name) }}</label>
+ 
+  <label for="">ID：{{$customer->id}}</label>
+  <label for="">名前：{{$customer->name}}</label>
   <div class="row">
     <div class="col-4">
       <div id="list-example" class="list-group">
@@ -20,6 +22,7 @@
       </div>
     </div>
   </div>
+
 </div>
 
 

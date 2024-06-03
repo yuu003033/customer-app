@@ -28,12 +28,6 @@ class HomeController extends Controller
         
         return view('home',compact('karuteLists'));
     }
-    
-    public function detail($id)
-    {
-        $karuteLists = Customer::find($id);
-        return view('detail', compact('karuteLists'));
-    }
-   
-   
+
+
 }

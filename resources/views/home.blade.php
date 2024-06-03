@@ -44,8 +44,8 @@
                         <tbody class="tr_lists">
                     @foreach($karuteLists as $list)
                         <tr id="{{$list->id}}">
-                            <td>{{ ($list->id) }}</td>
-                            <td>{{ ($list->name) }}</td>
+                            <td>{{ $list->id }}</td>
+                            <td>{{ $list->name }}</td>
                             <td></td>
                             <td></td>
                             <td>
@@ -59,10 +59,14 @@
                                 
                             </td>
                             <td>
-                                <input type="hidden" name="detail">
-                                <button type="submit" class="btn btn-primary">詳細</button>
+                                <input type="hidden" name="karute">
+                                <a type="button" class="nav-trashBox" href="{{ route('karute') }}">詳細</a>
                             </td>
-                            </tr>
+                            <td>
+                                <input type="hidden" name="detail">
+                                <a type="button" class="nav-trashBox" href="{{ route('detail',['id'=>$list->id]) }}">顧客情報</a>
+                            </td>
+                        </tr>
                     @endforeach
                         </tbody>
                     </table>
