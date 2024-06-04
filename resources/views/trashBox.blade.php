@@ -39,7 +39,7 @@
                                     <form action="{{ route('delete', ['id'=>$list->id]) }}" method="POST" id="deleteForm{{ $list['id'] }}" >
                                     @csrf
                                     <input type="hidden" name="list_id" value="{{$list['id']}}">
-                                    <button type="button" onClick="deleteConfirm()" name="delete" class="btn-outline-primary btn-lg">削除</td>
+                                    <button type="button" onClick="deleteConfirm({{ $list['id'] }})" name="delete" class="btn-outline-primary btn-lg">削除</td>
                                     </form>
                                     @endif  
                             </tr>

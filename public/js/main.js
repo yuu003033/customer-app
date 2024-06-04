@@ -5,5 +5,7 @@ function deleteConfirm(){
   } else{
     const form = document.getElementById('deleteForm')
     form.submit();
+
   }
+
 }

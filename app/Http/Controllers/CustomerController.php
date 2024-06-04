@@ -62,6 +62,7 @@ class CustomerController extends Controller
     public function delete(Request $request){
          // 削除処理
         $karuteLists = Customer::find($request->list_id)->delete();
+        
         return redirect()->route('home');
     }
     public function restore($id){
