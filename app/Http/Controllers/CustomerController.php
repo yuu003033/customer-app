@@ -80,7 +80,8 @@ class CustomerController extends Controller
     }
     public function deleteAll(){
     
-        $customers = Customer::where('status',1)->get();
-         return redirect()->route('home');
+        $customers = Customer::where('status',1)->delete();
+        
+         return redirect()->route('home')->with('successMessage','全て削除しました。');
     }
 }

@@ -48,11 +48,11 @@
                         </tbody>
                     </table>
                    
-                    <form action="{{ route('deleteAll') }}" method="POST">
+                    <form action="{{ route('deleteAll')}}" method="POST">
                         @csrf
-                          <button type="submit" class="btn-outline-primary btn-lg">ゴミ箱を空にする</button>
+                          <button type="button" class="btn-outline-primary btn-lg">ゴミ箱を空にする</button>
                           </form>
-                        <p>データはありません。</p>
+                        <!-- <p>データはありません。</p> -->
                     </form>  
                  
               </div>
