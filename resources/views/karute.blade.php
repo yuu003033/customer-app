@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <form action="{{ route('karute.update', $karute->id) }}" method="POST">
+    <form action="{{ route('karute') }}" method="POST">
     @csrf
     <div class="card" style="width: 50%;">
         <img src="{{ asset('images/no-img.jpg') }}" class="card-img-top" alt="" width="100">
@@ -62,7 +62,7 @@
         </ul>
     </div>
     <div class="col-md-4">
-        <!-- <input class="btn btn-primary" type="button" value="編集"> -->
+        <a href="{{ action($karute->id) }}" type="button">編集</a>
         <input class="btn btn-primary" type="submit" value="登録">
         </div>
     </div>
