@@ -60,7 +60,7 @@
                             </td>
                             <td>
                                 <input type="hidden" name="karute">
-                                <a type="button" class="nav-trashBox" href="{{ route('karute') }}">詳細</a>
+                                <a type="submit" class="nav-trashBox" href="{{ route('karute') }}">詳細</a>
                             </td>
                             <td>
                                 <input type="hidden" name="detail">

@@ -36,16 +36,12 @@ class CustomerController extends Controller
       
         $customersList->create();
     }
-    public function edit(Request $request){
+    public function edit($id){
         // 編集ページ
-        return view('index');
+        $customers = Customer::find($id);
+        return view('index', compact('customers'));
     }
-    public function update(Request $request){
-        // 編集処理
-        
-        
-        return view('customer');
-    }
+    
     public function changeStatus($id){
         $customer = Customer::find($id);
         // dd($customer);
@@ -76,12 +72,12 @@ class CustomerController extends Controller
     {
         $customer = Customer::find($id);
         
-        return view('detail', compact('customer'));
+        return view('detail', compact('customer'))->with('customer');
     }
     public function deleteAll(){
     
         $customers = Customer::where('status',1)->delete();
         
-         return redirect()->route('home')->with('successMessage','全て削除しました。');
+        return redirect()->route('home');
     }
 }
