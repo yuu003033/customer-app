@@ -36,3 +36,4 @@ Route::post('/customer/deleteAll', [App\Http\Controllers\CustomerController::cla
 Route::get('/karute', [App\Http\Controllers\KaruteController::class, 'karute'])->name('karute');
 Route::get('/karute/edit', [App\Http\Controllers\KaruteController::class, 'edit'])->name('edit');
 Route::get('/karute/update/{id}', [App\Http\Controllers\KaruteController::class, 'update'])->name('update');
+Route::post('/karute/store', [App\Http\Controllers\KaruteController::class, 'store'])->name('store');

@@ -9,10 +9,20 @@ class Karute extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'last_visited',
-        'visited_record',
-        'image_path',
-        'category_id',
-        'text'
+        'memo',
+        'extention',
+        'lashlift',
+        'eyebrows',
+        'upAndDown',
+        'lowerEyelashes',
+        'off',
+        'rightUp',
+        'leftUp',
+        'rightDown',
+        'leftDown',
+        'eyebrowsRight',
+        'eyebrowsLeft',
+        'date'
+        ,'imgPath'
     ];
 }

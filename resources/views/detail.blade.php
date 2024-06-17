@@ -5,21 +5,39 @@
 
   <h1>顧客詳細</h1>
  
-  <label for="">ID：{{$customer->id}}</label>
-  <label for="">名前：{{$customer->name}}</label>
-  <div class="row">
-    <div class="col-4">
-      <div id="list-example" class="list-group">
-        <a class="list-group-item list-group-item-action" href="#list-item-1">Item 1</a>
+  <p>ID：{{$customer->id}}</p>
+  <p>名前：{{$customer->name}}</p>
+  <p>TEL：{{$customer->telephone}}</p>
+  <p>郵便番号：{{$customer->zipcode}}</p>
+  <p>都道府県：{{$customer->prefecture}}</p>
+  <p>市町村区：{{$customer->city}}</p>
+  
 
-      </div>
+  <div class="row">
+    <div class="col">
     </div>
-    <div class="col-8">
-      <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
-        <h4 id="list-item-1">Item 1</h4>
-        <p>...</p>
-    
-      </div>
+    <h2>来店履歴</h2>
+    <table class="table table-striped" >
+      <thead>
+        <tr>
+          <th scope="col">来店日</th>
+          <th scope="col">メニュー</th>
+          <th scope="col">施術内容</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2024/5/6</td>
+          <td>エクステ</td>
+          <td>＜オフ有り＞100本</td>
+          <td><a href="">カルテ詳細</a></td>
+          <td>ゴミ箱</td>
+        </tr>
+      </tbody>
+    </table>
+      
     </div>
   </div>
 

@@ -24,23 +24,23 @@
     <label>
     <div class="input-group">
         <div class="input-group-text">郵便番号</div>
-        <input type="text" name="postal_code" class="form-control" minlength="7" maxlength="8" pattern="\d*" autocomplete="shipping postal-code" id="autoSizingInputGroup" placeholder="000-0000">
+        <input type="text" name="zipcode" class="form-control" minlength="7" maxlength="8" pattern="\d*" autocomplete="shipping zipcode" id="autoSizingInputGroup" placeholder="0000000">
     </div>
     </label>
     </div>
     <div class="col-auto">
       <select class="form-select" id="inputGroupSelect01" name="prefecture">
-        <option selected>都道府県</option>
-        <option value="1">神奈川</option>
-        <option value="2">東京</option>
-        <option value="3">埼玉</option>
-        <option value="4">千葉</option>
-        <option value="5">etc..</option>
+        <option value="">都道府県</option>
+        <option value="神奈川">神奈川</option>
+        <option value="東京">東京</option>
+        <option value="埼玉">埼玉</option>
+        <option value="千葉">千葉</option>
+        <option value="etc..">etc..</option>
       </select>
     </div>
   
   <div class="col-auto">
-  <label class="visually-hidden" for="autoSizingInputGroup">>市町村</label>
+  <label class="visually-hidden" for="autoSizingInputGroup">>市町村区</label>
     <div class="input-group">
       <div class="input-group-text">市町村</div>
       <input type="text" class="form-control" name="city" id="autoSizingInputGroup">
