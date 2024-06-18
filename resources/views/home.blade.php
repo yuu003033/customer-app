@@ -15,13 +15,12 @@
                     </form>   
                 </div>
             </div>
-            <div class="col-md-2">
-                <a class="nav-regAccount" href="{{ route('new') }}">新規登録</a>
+            <div class="col-md-4">
+                <div class="btn-group" role="group" aria-label="btn-outline-primary">
+                        <a class="btn btn-outline-primary" href="{{ route('new') }}">新規登録</a>
+                        <a class="btn btn-outline-primary" href="{{ route('trashBox') }}">ゴミ箱へ</a>        
+                </div>
             </div>
-            <div class="col-md-2">
-                <a class="nav-trashBox" href="{{ route('trashBox') }}">ゴミ箱へ</a>        
-            </div>
-
         </nav>
     </div>
     <div class="row justify-content-center">
@@ -52,7 +51,7 @@
                                 <form method="POST" action="{{ route('changeStatus',['id'=>$list->id]) }}">
                                 @csrf
                                     <input type="hidden" name="trashBox" value="{{$list->id}}">
-                                    <button type="submit" class="trash-area">
+                                    <button type="submit" class="btn btn-outline-dark">
                                     <i id='deleteButton(index)' class="fa-solid fa-trash-can"></i>
                                     </button>
                                 </form>
@@ -60,11 +59,11 @@
                             </td>
                             <td>
                                 <input type="hidden" name="karute">
-                                <a type="submit" class="nav-trashBox" href="{{ route('karute') }}">詳細</a>
+                                <a type="submit" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="{{ route('karute') }}">詳細</a>
                             </td>
                             <td>
                                 <input type="hidden" name="detail">
-                                <a type="button" class="nav-trashBox" href="{{ route('detail',['id'=>$list->id]) }}">顧客情報</a>
+                                <a type="button" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="{{ route('detail',['id'=>$list->id]) }}">顧客情報</a>
                             </td>
                         </tr>
                     @endforeach

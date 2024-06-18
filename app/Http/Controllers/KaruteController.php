@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Karute;
 
 class KaruteController extends Controller
 {
@@ -25,7 +26,7 @@ class KaruteController extends Controller
         $karutes->off = $request->off;
         $karutes->rightUp = $request->rightUp;
         $karutes->leftUp = $request->leftUp;
-        $karutes->rightDow = $request->rightDow;
+        $karutes->rightDown = $request->rightDown;
         $karutes->leftDown = $request->leftDown;
         $karutes->eyebrowsRight = $request->eyebrowsRight;
         $karutes->eyebrowsLeft = $request->eyebrowsLeft;
@@ -35,8 +36,8 @@ class KaruteController extends Controller
         // dd($karutes);
         // DBに保存
         $karutes->save();
-
-        return redirect()->route('detail');
+        return view('home', compact('$karutes'));
+        // return redirect()->route('home');
     }
     public function update(Request $request, $id){
         // 編集処理

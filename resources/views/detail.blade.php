@@ -3,10 +3,23 @@
 @section('content')
 <div class="container">
 
-  <h1>顧客詳細</h1>
+  <div class="row g-2">
+    <div class="col-md-8">
+      <div class="form-floating">
+        <h1>顧客詳細</h1>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-floating">
+        <div class="btn">
+          <a href="{{ route('detail',['id'=>$customer->id]) }}" class="btn btn-outline-primary">新規カルテ作成</a>
+        </div>
+      </div>
+    </div>
+  </div>
  
   <p>ID：{{$customer->id}}</p>
-  <p>名前：{{$customer->name}}</p>
+  <h3>名前：{{$customer->name}}</h3>
   <p>TEL：{{$customer->telephone}}</p>
   <p>郵便番号：{{$customer->zipcode}}</p>
   <p>都道府県：{{$customer->prefecture}}</p>
@@ -33,7 +46,7 @@
           <td>エクステ</td>
           <td>＜オフ有り＞100本</td>
           <td><a href="">カルテ詳細</a></td>
-          <td>ゴミ箱</td>
+          <td><a href="">ゴミ箱</a></td>
         </tr>
       </tbody>
     </table>

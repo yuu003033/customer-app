@@ -8,7 +8,7 @@
     <div class="card" style="width: 50%;">
         <img src="{{ asset('images/no-img.jpg') }}" class="card-img-top" alt="" width="100">
         <div class="card-body">
-            <!-- <h5 class="card-title">名前</h5> -->
+     
             <p class="card-text">施術内容記入</p>
         </div>
         <ul class="list-group list-group-flush">
@@ -61,9 +61,9 @@
             </li>
         </ul>
     </div>
-    <div class="col-md-4">
-        <input class="btn btn-primary" type="submit" value="編集">
-        <input class="btn btn-primary" type="submit" value="登録">
+    <div class="col-md-4 btn-group" role="group" aria-label="Basic button group">
+        <input class="btn btn-outline-primary" type="submit" value="編集">
+        <input class="btn btn-outline-primary" type="submit" value="登録">
     </div>
     </form>
 </div>
