@@ -8,8 +8,10 @@
     <div class="card" style="width: 50%;">
         <img src="{{ asset('images/no-img.jpg') }}" class="card-img-top" alt="" width="100">
         <div class="card-body">
-     
+            <p>ID：{{$customer->id}}</p>
+            <p>名前：{{ $customer->name }}</p>
             <p class="card-text">施術内容記入</p>
+            <textarea name="" id=""></textarea>
         </div>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">

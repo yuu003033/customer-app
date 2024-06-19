@@ -8,8 +8,12 @@ use App\Models\Karute;
 class KaruteController extends Controller
 {
     //カルテ情報
-    public function karute(){
+    public function karute(Request $request,$id){
         // カルテ登録ページ
+        $customer = Customer::find($id);
+        $customers->name =$request->name;
+        $customers->get();
+
         return view('karute');
     }
     public function store(Request $request){
