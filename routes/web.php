@@ -33,7 +33,7 @@ Route::post('/customer/delete/{id}', [App\Http\Controllers\CustomerController::c
 Route::get('/customer/restore/{id}', [App\Http\Controllers\CustomerController::class, 'restore'])->name('restore');// データ復活
 Route::post('/customer/deleteAll', [App\Http\Controllers\CustomerController::class, 'deleteAll'])->name('deleteAll');//削除
 
-Route::get('/karute', [App\Http\Controllers\KaruteController::class, 'karute'])->name('karute');
-Route::get('/karute/edit', [App\Http\Controllers\KaruteController::class, 'edit'])->name('edit');
-Route::get('/karute/update/{id}', [App\Http\Controllers\KaruteController::class, 'update'])->name('update');
-Route::post('/karute/store', [App\Http\Controllers\KaruteController::class, 'store'])->name('store');
+Route::get('/karute/{id}', [App\Http\Controllers\KaruteController::class, 'karute'])->name('karute');
+Route::get('/karute_edit', [App\Http\Controllers\KaruteController::class, 'edit'])->name('karute_edit');
+Route::get('/karute_update/{id}', [App\Http\Controllers\KaruteController::class, 'update'])->name('karute_update');
+Route::post('/karute_store', [App\Http\Controllers\KaruteController::class, 'store'])->name('karute_store');

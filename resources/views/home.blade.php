@@ -59,7 +59,7 @@
                             </td>
                             <td>
                                 <input type="hidden" name="karute">
-                                <a type="submit" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="{{ route('karute') }}">詳細</a>
+                                <a type="button" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="{{ route('karute', ['id'=>$customer->id]) }}">詳細</a>
                             </td>
                             <td>
                                 <input type="hidden" name="detail">

@@ -8,13 +8,13 @@ use App\Models\Karute;
 class KaruteController extends Controller
 {
     //カルテ情報
-    public function karute(Request $request,$id){
+    public function karute(Request $request, $id){
         // カルテ登録ページ
         $customer = Customer::find($id);
-        $customers->name =$request->name;
-        $customers->get();
+        // $customers->name =$request->name;
+        $customer->get();
 
-        return view('karute');
+        return view('karute', compact('customer'));
     }
     public function store(Request $request){
         // 登録処理
@@ -40,8 +40,8 @@ class KaruteController extends Controller
         // dd($karutes);
         // DBに保存
         $karutes->save();
-        return view('home', compact('$karutes'));
-        // return redirect()->route('home');
+        // return view('home', compact('$karutes'));
+        return redirect()->route('home');
     }
     public function update(Request $request, $id){
         // 編集処理
@@ -68,7 +68,7 @@ class KaruteController extends Controller
         
         return view('customers');
     }
-    // public function edit($id){
+    // public function karute_edit($id){
     //     // 編集ページ
     //     $customers = Customer::find($id);
     //     return view('index', compact('customers'));

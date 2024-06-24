@@ -12,7 +12,7 @@
     <div class="col-md-4">
       <div class="form-floating">
         <div class="btn">
-          <a href="{{ route('karute') }}" class="btn btn-outline-primary">新規カルテ作成</a>
+          <a href="{{ route('karute', ['id'=>$customer->id]) }}" class="btn btn-outline-primary">新規カルテ作成</a>
         </div>
       </div>
     </div>
