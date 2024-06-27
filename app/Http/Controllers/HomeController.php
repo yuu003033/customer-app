@@ -25,7 +25,7 @@ class HomeController extends Controller
     public function index()
     {
         $karuteLists  = Customer::where('status', 0)->get();
-        
+     
         return view('home',compact('karuteLists'));
     }
 

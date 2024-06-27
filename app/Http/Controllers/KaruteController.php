@@ -4,17 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Karute;
+use App\Models\Customer;
 
 class KaruteController extends Controller
 {
     //カルテ情報
-    public function karute(Request $request, $id){
+    public function karute($id){
         // カルテ登録ページ
         $customer = Customer::find($id);
         // $customers->name =$request->name;
-        $customer->get();
+ 
 
         return view('karute', compact('customer'));
+    }
+    public function create(Request $request){
+        return view('create');
     }
     public function store(Request $request){
         // 登録処理
@@ -45,29 +49,55 @@ class KaruteController extends Controller
     }
     public function update(Request $request, $id){
         // 編集処理
-        $customers = Customer::make($request->all(),[
-            'name' =>'required',
-            'telephone' =>'required',
-            'zipcode' =>'required',
-            'prefecture' =>'required',
-            'city' =>'required',
+        $karutes = Customer::make($request->all(),[
+            'memo' =>'required',
+            'extention' =>'required',
+            'lashlift' =>'required',
+            'eyebrows' =>'required',
+            'upAndDown' =>'required',
+            'lowerEyelashes' =>'required',
+            'off' =>'required',
+            'rightUp' =>'required',
+            'leftUp' =>'required',
+            'rightDown' =>'required',
+            'leftDown' =>'required',
+            'eyebrowsRight' =>'required',
+            'eyebrowsLeft' =>'required',
+            'date' =>'required',
+            'imgPath' =>'required',
+
         ]);
-        if($customers->fails()){
+        if($karutes->fails()){
             return redirect($id)
             ->withInput()
-            ->withErorrs($customers);
+            ->withErorrs($karutes);
         }
-        $customers = Customer::find($id);
-        $customers->name =$request->name;
-        $customers->telephone =$request->telephone;
-        $customers->zipcode =$request->zipcode;
-        $customers->prefecture =$request->prefecture;
-        $customers->city =$request->city;
-        $customers->save();
+        $karutes = Customer::find($id);
+        $karutes->memo =$request->memo;
+        $karutes->extention =$request->extention;
+        $karutes->lashlift =$request->lashlift;
+        $karutes->eyebrows =$request->eyebrows;
+        $karutes->upAndDown =$request->upAndDown;
+        $karutes->lowerEyelashes =$request->lowerEyelashes;
+        $karutes->off =$request->off;
+        $karutes->rightUp = $request->rightUp;
+        $karutes->leftUp = $request->leftUp;
+        $karutes->rightDown = $request->rightDown;
+        $karutes->leftDown = $request->leftDown;
+        $karutes->eyebrowsRight = $request->eyebrowsRight;
+        $karutes->eyebrowsLeft = $request->eyebrowsLeft;
+        $karutes->date = $request->date;
+        $karutes->imgPath = $request->imgPath;
+        $karutes->save();
     
         
-        return view('customers');
+        return view('karutes');
     }
+    // public function detail($id){
+    //     $customer = Customer::find($id);
+    //     return view('detail');
+    // }
+
     // public function karute_edit($id){
     //     // 編集ページ
     //     $customers = Customer::find($id);

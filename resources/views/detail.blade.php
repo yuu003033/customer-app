@@ -31,6 +31,7 @@
     </div>
     <h2>来店履歴</h2>
     <table class="table table-striped" >
+      
       <thead>
         <tr>
           <th scope="col">来店日</th>
@@ -41,14 +42,16 @@
         </tr>
       </thead>
       <tbody>
+      
         <tr>
-          <td>2024/5/6</td>
+          <td></td>
           <td>エクステ</td>
           <td>＜オフ有り＞100本</td>
           <td><a href="">カルテ詳細</a></td>
           <td><a href="">ゴミ箱</a></td>
         </tr>
       </tbody>
+ 
     </table>
       
     </div>
