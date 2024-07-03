@@ -15,13 +15,14 @@ class KaruteController extends Controller
         // $customers->name =$request->name;
  
 
-        return view('karute', compact('customer'));
+        return view('karute.new', compact('customer'));
     }
     public function create(Request $request){
         return view('create');
     }
     public function store(Request $request){
         // 登録処理
+        //   dd($request->all());
         $karutes = new Karute;
         // dd($karutes);
         // フォームから送信されたデータ取得し、インスタンスの属性に代入する
@@ -41,38 +42,38 @@ class KaruteController extends Controller
         $karutes->date = $request->date;
         $karutes->imgPath = $request->imgPath;
 
-        // dd($karutes);
+        // dd($request->all());
         // DBに保存
         $karutes->save();
-        // return view('home', compact('$karutes'));
-        return redirect()->route('home');
+        // return view('', compact('$karutes'));
+        return redirect()->route('detail');
     }
     public function update(Request $request, $id){
         // 編集処理
-        $karutes = Customer::make($request->all(),[
-            'memo' =>'required',
-            'extention' =>'required',
-            'lashlift' =>'required',
-            'eyebrows' =>'required',
-            'upAndDown' =>'required',
-            'lowerEyelashes' =>'required',
-            'off' =>'required',
-            'rightUp' =>'required',
-            'leftUp' =>'required',
-            'rightDown' =>'required',
-            'leftDown' =>'required',
-            'eyebrowsRight' =>'required',
-            'eyebrowsLeft' =>'required',
-            'date' =>'required',
-            'imgPath' =>'required',
+        // $karutes = Karute::make($request->all(),[
+        //     'memo' =>'required',
+        //     'extention' =>'required',
+        //     'lashlift' =>'required',
+        //     'eyebrows' =>'required',
+        //     'upAndDown' =>'required',
+        //     'lowerEyelashes' =>'required',
+        //     'off' =>'required',
+        //     'rightUp' =>'required',
+        //     'leftUp' =>'required',
+        //     'rightDown' =>'required',
+        //     'leftDown' =>'required',
+        //     'eyebrowsRight' =>'required',
+        //     'eyebrowsLeft' =>'required',
+        //     'date' =>'required',
+        //     'imgPath' =>'required',
 
-        ]);
-        if($karutes->fails()){
-            return redirect($id)
-            ->withInput()
-            ->withErorrs($karutes);
-        }
-        $karutes = Customer::find($id);
+        // ]);
+        // if($karutes->fails()){
+        //     return redirect()->back()
+        //     ->withInput()
+        //     ->withErorrs($karutes);
+        // }
+        $karutes = Karute::find($id);
         $karutes->memo =$request->memo;
         $karutes->extention =$request->extention;
         $karutes->lashlift =$request->lashlift;
@@ -98,10 +99,10 @@ class KaruteController extends Controller
     //     return view('detail');
     // }
 
-    // public function karute_edit($id){
-    //     // 編集ページ
-    //     $customers = Customer::find($id);
-    //     return view('index', compact('customers'));
-    // }
+    public function edit($id){
+        // 編集ページ
+        $customers = Karute::find($id);
+        return view('home', compact('customers'));
+    }
     
 }

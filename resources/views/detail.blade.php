@@ -47,7 +47,7 @@
           <td></td>
           <td>エクステ</td>
           <td>＜オフ有り＞100本</td>
-          <td><a href="">カルテ詳細</a></td>
+          <td><a href="{{ route('edit .karute',['id'=>$customer->id]) }}">カルテ詳細</a></td>
           <td><a href="">ゴミ箱</a></td>
         </tr>
       </tbody>

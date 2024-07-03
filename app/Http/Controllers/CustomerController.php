@@ -38,7 +38,7 @@ class CustomerController extends Controller
     public function edit($id){
         // 編集ページ
         $customers = Customer::find($id);
-        return view('index', compact('customers'));
+        return view('new', compact('customers'));
     }
     
     public function changeStatus($id){

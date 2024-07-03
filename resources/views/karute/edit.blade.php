@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <form action="{{ route('store') }}" method="POST">
+    <form action="{{ route('karute_store') }}" method="POST">
     @csrf
     <div class="card" style="width: 50%;">
         <img src="{{ asset('images/no-img.jpg') }}" class="card-img-top" alt="" width="100">
@@ -11,12 +11,12 @@
             <p>ID：{{$customer->id}}</p>
             <p>名前：{{ $customer->name }}</p>
             <p class="card-text">施術内容記入</p>
-            <textarea name="" id=""></textarea>
+            <textarea name="memo" id=""></textarea>
         </div>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
             <h6 class="mb-1">施術項目</h6>
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" name="">
                 <label class="form-check-label" for="inlineCheckbox1">エクステ</label>
                 <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
                 <label class="form-check-label" for="inlineCheckbox2">パーマ</label>

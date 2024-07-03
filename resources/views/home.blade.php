@@ -57,10 +57,7 @@
                                 </form>
                                 
                             </td>
-                            <td>
-                                <input type="hidden" name="karute">
-                                <a type="button" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="{{ route('karute', ['id'=>$list->id]) }}">詳細</a>
-                            </td>
+                       
                             <td>
                                 <input type="hidden" name="detail">
                                 <a type="button" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="{{ route('detail',['id'=>$list->id]) }}">顧客情報</a>
