@@ -9,6 +9,7 @@ class Karute extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'karute_id',
         'memo',
         'extention',
         'lashlift',
@@ -22,7 +23,7 @@ class Karute extends Model
         'leftDown',
         'eyebrowsRight',
         'eyebrowsLeft',
-        'date'
-        ,'imgPath'
+        'date',
+        'imgPath'
     ];
 }

@@ -18,6 +18,7 @@ class CustomerController extends Controller
         // dd($customers);
         // フォームから送信されたデータ取得し、インスタンスの属性に代入する
         $customers->name = $request->name;
+        $customers->telephone = $request->telephone;
         $customers->prefecture = $request->prefecture;
         $customers->city = $request->city;
         // $customers->address2 = $request->address2;

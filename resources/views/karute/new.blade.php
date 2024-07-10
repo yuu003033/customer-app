@@ -68,7 +68,6 @@
         </ul>
     </div>
     <div class="col-md-4 btn-group" role="group" aria-label="Basic button group">
-        <!-- <input class="btn btn-outline-primary" type="submit" value="編集"> -->
         <input class="btn btn-outline-primary" type="submit" value="登録">
     </div>
     </form>

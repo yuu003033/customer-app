@@ -12,20 +12,21 @@ class KaruteController extends Controller
     public function karute($id){
         // カルテ登録ページ
         $customer = Customer::find($id);
-        // $customers->name =$request->name;
- 
 
         return view('karute.new', compact('customer'));
     }
     public function create(Request $request){
-        return view('create');
+        // カルテの登録画面
+        return view('create.new');
     }
-    public function store(Request $request){
-        // 登録処理
+    public function store(Request $request, $id){
+        // カルテの登録処理
         //   dd($request->all());
         $karutes = new Karute;
-        // dd($karutes);
-        // フォームから送信されたデータ取得し、インスタンスの属性に代入する
+        // // dd($karutes);
+        // // フォームから送信されたデータ取得し、インスタンスの属性に代入する
+        $request->customer_id;
+        
         $karutes->memo = $request->memo;
         $karutes->extention = $request->extention;
         $karutes->lashlift = $request->lashlift;
@@ -41,38 +42,18 @@ class KaruteController extends Controller
         $karutes->eyebrowsLeft = $request->eyebrowsLeft;
         $karutes->date = $request->date;
         $karutes->imgPath = $request->imgPath;
-
+        // $request->customer_id;
         // dd($request->all());
         // DBに保存
         $karutes->save();
         // return view('', compact('$karutes'));
-        return redirect()->route('detail');
+        return redirect()->route('karutes');
+        
+
     }
     public function update(Request $request, $id){
         // 編集処理
-        // $karutes = Karute::make($request->all(),[
-        //     'memo' =>'required',
-        //     'extention' =>'required',
-        //     'lashlift' =>'required',
-        //     'eyebrows' =>'required',
-        //     'upAndDown' =>'required',
-        //     'lowerEyelashes' =>'required',
-        //     'off' =>'required',
-        //     'rightUp' =>'required',
-        //     'leftUp' =>'required',
-        //     'rightDown' =>'required',
-        //     'leftDown' =>'required',
-        //     'eyebrowsRight' =>'required',
-        //     'eyebrowsLeft' =>'required',
-        //     'date' =>'required',
-        //     'imgPath' =>'required',
-
-        // ]);
-        // if($karutes->fails()){
-        //     return redirect()->back()
-        //     ->withInput()
-        //     ->withErorrs($karutes);
-        // }
+       
         $karutes = Karute::find($id);
         $karutes->memo =$request->memo;
         $karutes->extention =$request->extention;
@@ -91,7 +72,6 @@ class KaruteController extends Controller
         $karutes->imgPath = $request->imgPath;
         $karutes->save();
     
-        
         return view('karutes');
     }
     // public function detail($id){
@@ -101,8 +81,8 @@ class KaruteController extends Controller
 
     public function edit($id){
         // 編集ページ
-        $customers = Karute::find($id);
-        return view('home', compact('customers'));
+        $customer = Customer::find($id);
+        return view('karute.edit', compact('customer'));
     }
     
 }
