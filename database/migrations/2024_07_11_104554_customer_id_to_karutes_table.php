@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('karutes', function (Blueprint $table) {
             //カルテ追加
-            $table->integer('karute_id')->comment('カルテID');
+            $table->integer('customer_id')->comment('カスタマーID');
         });
     }
 
@@ -23,8 +23,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('karutes', function (Blueprint $table) {
-            
-            $table->dropColumn('karute_id');
+            $table->dropColumn('customer_id');
         });
     }
 };

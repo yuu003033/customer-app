@@ -71,8 +71,21 @@ class CustomerController extends Controller
     public function detail($id)
     {
         $customer = Customer::find($id);
-        
-        return view('detail', compact('customer'));
+        $karutes = Karute::where('customer_id', $id)->get();
+        foreach($karutes as $karute){
+            $menu = '';
+            if ($karute->extention == true){
+                $menu.= 'エクステ ';
+            }
+            if ($karute->lashlift == true){
+                $menu.= 'パーマ ';
+            }
+            if ($karute->eyebrows == true){
+                $menu.= '眉毛 ';
+            }
+            $karute['menu'] = $menu;
+        }
+        return view('detail', compact('customer', 'karutes'));
     }
     public function deleteAll(){
     

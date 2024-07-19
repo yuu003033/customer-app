@@ -9,7 +9,7 @@ class Karute extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'karute_id',
+        'customer_id',
         'memo',
         'extention',
         'lashlift',
@@ -26,4 +26,11 @@ class Karute extends Model
         'date',
         'imgPath'
     ];
+    
+    // Eloquentモデルでのデフォルト値の設定例
+protected $attributes = [
+    'extention' => 'default_value_if_any',
+    // 他のカラムに対するデフォルト値の設定
+];
+
 }

@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <form action="{{ route('karute_store') }}" method="POST">
+    <form action="{{ route('karute_store', ['id'=>$customer->id]) }}" method="POST">
     @csrf
     <div class="card" style="width: 50%;">
         
