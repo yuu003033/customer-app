@@ -20,33 +20,33 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
             <h6 class="mb-1">施術項目</h6>
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="エクステ" name="extention">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="extention" name="extention">
                 <label class="form-check-label" for="inlineCheckbox1">エクステ</label>
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="パーマ" name="lashlift">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="lashlift" name="lashlift">
                 <label class="form-check-label" for="inlineCheckbox2">パーマ</label>
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="まゆ毛" name="eyebrows">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="eyebrows" name="eyebrows">
                 <label class="form-check-label" for="inlineCheckbox3">まゆ毛</label>
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="上下" name="upAndDown">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="upAndDown" name="upAndDown">
                 <label class="form-check-label" for="inlineCheckbox4">上下</label>
             </li>
             <li class="list-group-item">
             <h6 class="mb-1">エクステ</h6>
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="下まつげ" name="lowerEyelashes">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="lowerEyelashes" name="lowerEyelashes">
                 <label class="form-check-label" for="inlineCheckbox5">下まつげ</label>
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="オフあり" name="off">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="off" name="off">
                 <label class="form-check-label" for="inlineCheckbox6">オフあり</label>
             </li>
             <li class="list-group-item">
             <div class="row">
                 <div class="col-md-4">
                     <label class="form-label">右目</label>
-                    <input type="text" class="form-control" id="validationCustom01" value="上" name="rightUp" required>
-                    <input type="text" class="form-control" id="inlineCheckbox5" value="下" name="rightDown" required>
+                    <input type="text" class="form-control" id="validationCustom01"  name="rightUp" required>
+                    <input type="text" class="form-control" id="inlineCheckbox5"  value="下" name="rightDown" required>
                 
                 </div>
                 <div class="col-md-4">
                     <label class="form-label">左目</label>
-                    <input type="text" class="form-control" id="validationCustom02" value="上" name="leftUp" required>
+                    <input type="text" class="form-control" id="validationCustom02"  name="leftUp" required>
                     <input type="text" class="form-control" id="inlineCheckbox5" value="下" name="leftDown" required>
                 
                 </div>
@@ -61,7 +61,7 @@
                 </div>
                 <div class="col-md-4">
                     <label class="form-label">まゆ毛</label>
-                    <input type="text" class="form-control" id="validationCustom03" value="左"name="eyebrowsLeft" required>               
+                    <input type="text" class="form-control" id="validationCustom03" value="左" name="eyebrowsLeft" required>               
                 </div>  
             </div>
             </li>
