@@ -23,81 +23,86 @@ class KaruteController extends Controller
         // バリデーション
         // dd($request->all());
         $request->validate([
-            'customer_id' => 'required|integer',
-            'memo' => 'nullable|string',
-            'extention' => 'required|string', // ここでstringとしてバリデーション
-            'lashlift' => 'nullable|boolean',
-            'eyebrows' => 'nullable|string',
-            'upAndDown' => 'nullable|boolean',
-            'lowerEyelashes' => 'nullable|boolean',
-            'off' => 'nullable|boolean',
-            'rightUp' => 'nullable|integer',
-            'leftUp' => 'nullable|integer',
-            'rightDown' => 'nullable|integer',
-            'leftDown' => 'nullable|integer',
-            'eyebrowsRight' => 'nullable|string',
-            'eyebrowsLeft' => 'nullable|string',
-            'date' => 'required|date',
-            'imgPath' => 'nullable|string',
+            'customer_id' => 'required',
+            'date' => 'date',
+            // 'imgPath' => 'string',
         ]);
-    
+    //  dd($request->all());
         $karutes = new Karute;
         $karutes->customer_id = $request->customer_id;
-        $karutes->memo = $request->memo;
+        $karutes->memo = $request->memo ?? '';
     
         // カスタム変換ロジック
-    $karutes->extention = $request->extention == 'エクステ' ? 1 : 0;
-    $karutes->lashlift = $request->lashlift == 'パーマ' ? 1 : 0;
-    $karutes->eyebrows = $request->eyebrows == 'まゆ毛' ? 1 : 0;
-    $karutes->upAndDown = $request->upAndDown == '上下' ? 1 : 0;
-    $karutes->lowerEyelashes = $request->lowerEyelashes == '下まつげ' ? 1 : 0;
-    $karutes->off = $request->off == 'オフあり' ? 1 : 0;
-
-    // 他のフィールドの値をそのまま代入
-    $karutes->rightUp = $request->rightUp;
-    $karutes->leftUp = $request->leftUp;
-    $karutes->rightDown = $request->rightDown;
-    $karutes->leftDown = $request->leftDown;
-    $karutes->eyebrowsRight = $request->eyebrowsRight;
-    $karutes->eyebrowsLeft = $request->eyebrowsLeft;
-    $karutes->date = $request->date;
-    $karutes->imgPath = $request->imgPath;
-
+        $karutes->extention = $request->has('extention') ? 1 : 0;
+        $karutes->lashlift = $request->has('lashlift') ? 1 : 0;
+        $karutes->eyebrows = $request->has('eyebrows') ? 1 : 0;
+        $karutes->upAndDown = $request->has('upAndDown') ? 1 : 0;
+        $karutes->lowerEyelashes = $request->has('lowerEyelashes') ? 1 : 0;
+        $karutes->off = $request->has('off') ? 1 : 0;
+    
+        // 他のフィールドの値をそのまま代入
+        $karutes->rightUp = $request->rightUp ?? '';
+        $karutes->leftUp = $request->leftUp ?? '';
+        $karutes->rightDown = $request->rightDown ?? '';  // nullの場合は空文字を使用
+        $karutes->leftDown = $request->leftDown ?? '';
+        $karutes->eyebrowsRight = $request->eyebrowsRight ?? '';
+        $karutes->eyebrowsLeft = $request->eyebrowsLeft ?? '';
+        $karutes->date = $request->date;
+        $karutes->imgPath = $request->imgPath ?? '';
+// dd($request->all());
     // 保存前にログ出力
-    Log::info('保存前のデータ: ', $karutes->toArray());
-
+    // Log::info('保存前のデータ: ', $karutes->toArray());
         $karutes->save();
-         // データが保存されたことを確認するためのデバッグ
-
-    Log::info('保存完了: ', ['karute_id' => $karutes->id]);
-    // return view('detail', compact('karutes'));
-        return view('home', compact('karutes'));
+    //      // データが保存されたことを確認するためのデバッグ
+    // Log::info('保存完了: ', ['karute_id' => $karutes->id]);
+    return redirect()->route('detail',['id'=>$request->customer_id]);
     }
     
 
   
-    public function update(Request $request, $id){
+    public function update(Request $request,$id){
+        // $request->validate([
+        //     'memo' => 'string',
+        //     'extention' => 'boolean',
+        //     'lashlift' => 'boolean',
+        //     'eyebrows' => 'boolean',
+        //     'upAndDown' => 'boolean',
+        //     'lowerEyelashes' => 'boolean',
+        //     'off' => 'boolean',
+        //     'rightUp' => 'string',
+        //     'leftUp' => 'string',
+        //     'rightDown' => 'string',
+        //     'leftDown' => 'string',
+        //     'eyebrowsRight' => 'string',
+        //     'eyebrowsLeft' => 'string',
+        //     'date' => 'date',
+        //     'imgPath' => 'string',
+        // ]);
+
         // 編集処理
-       
-        $karutes = Karute::find($id);
-        $karutes->memo =$request->memo;
-        $karutes->extention =$request->extention;
-        $karutes->lashlift =$request->lashlift;
-        $karutes->eyebrows =$request->eyebrows;
-        $karutes->upAndDown =$request->upAndDown;
-        $karutes->lowerEyelashes =$request->lowerEyelashes;
-        $karutes->off =$request->off;
-        $karutes->rightUp = $request->rightUp;
-        $karutes->leftUp = $request->leftUp;
-        $karutes->rightDown = $request->rightDown;
-        $karutes->leftDown = $request->leftDown;
-        $karutes->eyebrowsRight = $request->eyebrowsRight;
-        $karutes->eyebrowsLeft = $request->eyebrowsLeft;
-        $karutes->date = $request->date;
-        $karutes->imgPath = $request->imgPath;
-        $karutes->save();
+        $karute = Karute::find($id);
+      dd($request->all());
+        // $karutes->customer_id =$request->customer_id;
+        $karute->memo = $request->memo;
+        $karute->extention = $request->extention ? 1 : 0;
+        $karute->lashlift = $request->lashlift ? 1 : 0;
+        $karute->eyebrows = $request->eyebrows ? 1 : 0;
+        $karute->upAndDown = $request->upAndDown ? 1 : 0;
+        $karute->lowerEyelashes = $request->lowerEyelashes ? 1 : 0;
+        $karute->off = $request->off ? 1 : 0;
+        $karute->rightUp = $request->rightUp;
+        $karute->leftUp = $request->leftUp;
+        $karute->rightDown = $request->rightDown;
+        $karute->leftDown = $request->leftDown;
+        $karute->eyebrowsRight = $request->eyebrowsRight;
+        $karute->eyebrowsLeft = $request->eyebrowsLeft;
+        $karute->date = $request->date;
+        $karute->imgPath = $request->imgPath;
+        $karute->save();
+
+        return redirect()->route('karute_edit', ['id' => $karute->id])->with('succes', 'データが更新されました');
     
-        return view('karutes');
+        // return view('karute.update', compact('customer'));
     }
     // public function detail($id){
     //     $customer = Customer::find($id);
@@ -106,7 +111,8 @@ class KaruteController extends Controller
 
     public function edit($id){
         // 編集ページ
-        $customer = Customer::find($id);
+        $customer = Karute::find($id);
+        
         return view('karute.edit', compact('customer'));
     }
     

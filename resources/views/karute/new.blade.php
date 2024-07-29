@@ -14,6 +14,9 @@
             <div class="col-md-4">
                 <textarea name="memo" placeholder="施術内容記入"></textarea>
                 <input type="file">
+                <p>カスタマーID：{{ $customer->customer_id }}</p>
+                <input type="hidden" name="customer_id" value="{{ $customer->id }}">
+
             </div>
             
         </div>
@@ -40,14 +43,14 @@
             <div class="row">
                 <div class="col-md-4">
                     <label class="form-label">右目</label>
-                    <input type="text" class="form-control" id="validationCustom01"  name="rightUp" required>
-                    <input type="text" class="form-control" id="inlineCheckbox5"  value="下" name="rightDown" required>
+                    <input type="text" class="form-control" id="validationCustom01"  placeholder="上" name="rightUp">
+                    <input type="text" class="form-control" id="inlineCheckbox5"  placeholder="下" name="rightDown">
                 
                 </div>
                 <div class="col-md-4">
                     <label class="form-label">左目</label>
-                    <input type="text" class="form-control" id="validationCustom02"  name="leftUp" required>
-                    <input type="text" class="form-control" id="inlineCheckbox5" value="下" name="leftDown" required>
+                    <input type="text" class="form-control" id="validationCustom02"  placeholder="上" name="leftUp">
+                    <input type="text" class="form-control" id="inlineCheckbox5" placeholder="下" name="leftDown">
                 
                 </div>
             </div>
@@ -56,18 +59,19 @@
             <div class="row">
                 <div class="col-md-4">
                     <label class="form-label">まゆ毛</label>
-                    <input type="text" class="form-control" id="validationCustom03" value="右" name="eyebrowsRight" required>
+                    <input type="text" class="form-control" id="validationCustom03" placeholder="右" name="eyebrowsRight">
                 
                 </div>
                 <div class="col-md-4">
                     <label class="form-label">まゆ毛</label>
-                    <input type="text" class="form-control" id="validationCustom03" value="左" name="eyebrowsLeft" required>               
+                    <input type="text" class="form-control" id="validationCustom03" placeholder="左" name="eyebrowsLeft">               
                 </div>  
             </div>
             </li>
         </ul>
     </div>
     <div class="col-md-4 btn-group" role="group" aria-label="Basic button group">
+    <input type="date" class="btn btn-outline-primary" name="date">               
         <input class="btn btn-outline-primary" type="submit" value="登録">
     </div>
     </form>

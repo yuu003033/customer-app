@@ -36,7 +36,6 @@
         <tr>
           <th scope="col">来店日</th>
           <th scope="col">メニュー</th>
-          <th scope="col">施術内容</th>
           <th scope="col"></th>
           <th scope="col"></th>
         </tr>
@@ -46,8 +45,7 @@
         <tr>
           <td>{{$karute->date}}</td>
           <td>{{$karute->menu}}</td>
-          <td>＜オフ有り＞100本</td>
-          <td><a href="{{ route('karute_edit',['id'=>$customer->id]) }}">カルテ詳細</a></td>
+          <td><a href="{{ route('karute_update',['id'=>$customer->id]) }}">カルテ詳細</a></td>
           <td><a href="">ゴミ箱</a></td>
         </tr>
   @endforeach      

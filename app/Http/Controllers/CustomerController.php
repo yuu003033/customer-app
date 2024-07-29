@@ -71,6 +71,7 @@ class CustomerController extends Controller
     public function detail($id)
     {
         $customer = Customer::find($id);
+        $karutes = Karute::orderBy('date', 'desc')->get();
         $karutes = Karute::where('customer_id', $id)->get();
         foreach($karutes as $karute){
             $menu = '';
@@ -82,6 +83,12 @@ class CustomerController extends Controller
             }
             if ($karute->eyebrows == true){
                 $menu.= '眉毛 ';
+            }
+            if ($karute->upAndDown == true){
+                $menu.= '上下 ';
+            }
+            if ($karute->off == true){
+                $menu.= '【オフ有り】 ';
             }
             $karute['menu'] = $menu;
         }
