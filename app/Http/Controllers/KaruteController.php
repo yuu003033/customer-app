@@ -57,31 +57,11 @@ class KaruteController extends Controller
     // Log::info('保存完了: ', ['karute_id' => $karutes->id]);
     return redirect()->route('detail',['id'=>$request->customer_id]);
     }
-    
 
-  
     public function update(Request $request,$id){
-        // $request->validate([
-        //     'memo' => 'string',
-        //     'extention' => 'boolean',
-        //     'lashlift' => 'boolean',
-        //     'eyebrows' => 'boolean',
-        //     'upAndDown' => 'boolean',
-        //     'lowerEyelashes' => 'boolean',
-        //     'off' => 'boolean',
-        //     'rightUp' => 'string',
-        //     'leftUp' => 'string',
-        //     'rightDown' => 'string',
-        //     'leftDown' => 'string',
-        //     'eyebrowsRight' => 'string',
-        //     'eyebrowsLeft' => 'string',
-        //     'date' => 'date',
-        //     'imgPath' => 'string',
-        // ]);
-
         // 編集処理
         $karute = Karute::find($id);
-      dd($request->all());
+     
         // $karutes->customer_id =$request->customer_id;
         $karute->memo = $request->memo;
         $karute->extention = $request->extention ? 1 : 0;
@@ -97,23 +77,23 @@ class KaruteController extends Controller
         $karute->eyebrowsRight = $request->eyebrowsRight;
         $karute->eyebrowsLeft = $request->eyebrowsLeft;
         $karute->date = $request->date;
-        $karute->imgPath = $request->imgPath;
+        // $karute->imgPath = $request->imgPath;
+        // dd($request->all());
         $karute->save();
 
-        return redirect()->route('karute_edit', ['id' => $karute->id])->with('succes', 'データが更新されました');
-    
-        // return view('karute.update', compact('customer'));
+        return redirect()->route('karute_edit', ['id' => $karute->id]);
     }
-    // public function detail($id){
-    //     $customer = Customer::find($id);
-    //     return view('detail');
-    // }
+    public function detail($id){
+        $customer = Customer::find($id);
+        return view('detail');
+    }
 
     public function edit($id){
         // 編集ページ
-        $customer = Karute::find($id);
-        
-        return view('karute.edit', compact('customer'));
+        $karute = Karute::find($id);
+        $customer = Customer::find($karute->customer_id);
+        // dd($karute);
+        return view('karute.edit', compact('karute','customer'));
     }
     
 }

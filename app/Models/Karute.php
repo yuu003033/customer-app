@@ -28,9 +28,8 @@ class Karute extends Model
     ];
     
     // Eloquentモデルでのデフォルト値の設定例
-protected $attributes = [
-    'extention' => 'default_value_if_any',
-    // 他のカラムに対するデフォルト値の設定
-];
-
+    protected $attributes = [
+        'extention' => 'default_value_if_any',
+        // 他のカラムに対するデフォルト値の設定
+    ];
 }

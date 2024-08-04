@@ -7,12 +7,16 @@
     <div class="col-md-8">
       <div class="form-floating">
         <h1>顧客詳細</h1>
+        <a href="{{ route('edit', ['id'=>$customer->id]) }}" class="btn btn-outline-secondary">顧客編集</a>
       </div>
     </div>
     <div class="col-md-4">
       <div class="form-floating">
-        <div class="btn">
+      <div class="btn">
           <a href="{{ route('karute', ['id'=>$customer->id]) }}" class="btn btn-outline-primary">新規カルテ作成</a>
+        </div>
+        <div class="btn">
+          
         </div>
       </div>
     </div>
@@ -45,7 +49,7 @@
         <tr>
           <td>{{$karute->date}}</td>
           <td>{{$karute->menu}}</td>
-          <td><a href="{{ route('karute_update',['id'=>$customer->id]) }}">カルテ詳細</a></td>
+          <td><a href="{{ route('karute_edit',['id'=>$karute->id]) }}">カルテ詳細</a></td>
           <td><a href="">ゴミ箱</a></td>
         </tr>
   @endforeach      
