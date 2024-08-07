@@ -38,3 +38,5 @@ Route::get('/karute_create', [App\Http\Controllers\KaruteController::class, 'cre
 Route::post('/karute_store/{id}', [App\Http\Controllers\KaruteController::class, 'store'])->name('karute_store');
 Route::get('/karute_edit/{id}', [App\Http\Controllers\KaruteController::class, 'edit'])->name('karute_edit');
 Route::post('/karute_update/{id}', [App\Http\Controllers\KaruteController::class, 'update'])->name('karute_update');
+Route::post('/karute_delete/{id}', [App\Http\Controllers\KaruteController::class, 'delete'])->name('karute_delete');//カルテ削除
+

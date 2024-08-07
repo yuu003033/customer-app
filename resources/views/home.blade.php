@@ -45,8 +45,8 @@
                         <tr id="{{$list->id}}">
                             <td>{{ $list->id }}</td>
                             <td>{{ $list->name }}</td>
-                            <td></td>
-                            <td></td>
+                            <td>{{ $list->date }}</td>
+                            <td>{{ $list->menu }}</td>
                             <td>
                                 <form method="POST" action="{{ route('changeStatus',['id'=>$list->id]) }}">
                                 @csrf

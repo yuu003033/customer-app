@@ -52,7 +52,7 @@ class CustomerController extends Controller
         // $customers->address2 = $request->input('address2');
 
         $customers->save();
-        return redirect()->route('detail',['id' => $customers->id])->with('success', '顧客情報が更新されました');
+        return redirect()->route('detail',['id' => $customers->id]);
     }
     public function changeStatus($id){
         $customer = Customer::find($id);

@@ -50,7 +50,6 @@
           <td>{{$karute->date}}</td>
           <td>{{$karute->menu}}</td>
           <td><a href="{{ route('karute_edit',['id'=>$karute->id]) }}">カルテ詳細</a></td>
-          <td><a href="">ゴミ箱</a></td>
         </tr>
   @endforeach      
       </tbody>

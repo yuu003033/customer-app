@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Customer;
-
+use App\Models\Karute;
 class HomeController extends Controller
 {
     /**TOPページ
@@ -25,8 +25,8 @@ class HomeController extends Controller
     public function index()
     {
         $karuteLists  = Customer::where('status', 0)->get();
-     
-        return view('home',compact('karuteLists'));
+        $karutes = Karute::where('date')->orderBy('date', 'desc')->get();
+        return view('home',compact('karuteLists', 'karutes'));
     }
 
 

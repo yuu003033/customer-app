@@ -66,10 +66,20 @@
             </li>
         </ul>
     </div>
-    <div class="col-md-4 btn-group" role="group" aria-label="Basic button group">
-    <input type="date" class="btn btn-outline-primary" name="date" value="{{ $karute->date }}">
-        <input class="btn btn-outline-primary" type="submit" value="更新">
+    <div class="d-flex mb-3" role="group" aria-label="Basic button group">
+        <div class="p-2">
+            <input type="date" class="btn btn-outline-primary" name="date" value="{{ $karute->date }}">
+            <input class="btn btn-outline-primary" type="submit" value="更新">
+        </div>
+        <div class="ms-auto p-2" role="group" aria-label="Basic button">
+        <input class="btn btn-outline-primary"  onClick="deleteKaruteConfirm({{ $karute->id }})" name="delete"  type="button" value="削除">
     </div>
+    </div>
+    </form>
+    <form id="deleteForm{{ $karute->id }}" action="{{ route('karute_delete', ['id' => $karute->id]) }}" method="POST" style="display:none;">
+    @csrf
+    @method('POST')
+    
     </form>
 </div>
 @endsection
