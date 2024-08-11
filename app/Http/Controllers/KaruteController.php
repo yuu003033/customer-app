@@ -96,7 +96,9 @@ class KaruteController extends Controller
         return view('karute.edit', compact('karute','customer'));
     }
     public function delete($id){
-        $karute = Karute::find($id)->delete();
-        return redirect()->route('home');
+        $karute = Karute::find($id);
+        $customer_id = $karute->customer_id;
+        $karute->delete();
+        return redirect()->route('detail', ['id'=>$customer_id]);
     }
 }

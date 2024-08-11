@@ -18,5 +18,7 @@ class Customer extends Model
         'status',
         'deleted_at'
     ];
-
+    public function karutes(){
+        return $this->hasMany('App\Models\Karute','customer_id', 'id');
+    }
 }
