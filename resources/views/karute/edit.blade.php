@@ -8,13 +8,22 @@
     @method('POST')
     <div class="card" style="width: 50%;">
     <input type="hidden" name="customer_id" value="{{ $karute->customer_id }}">
+        @if ($karute->imgPath)
+        <img src="{{ Storage::url($karute->imgPath) }}" alt="施術画像" style="max-width: 100%;">
+        {{ dd(Storage::url($karute->imgPath)) }}
+        @else  
         <img src="{{ asset('images/no-img.jpg') }}" class="card-img-top" alt="" width="100">
+        @endif
+
         <div class="card-body">
             <p>ID：{{$karute->customer_id}}</p>
             <p>名前：{{$customer->name}}</p>
             <p class="card-text">施術内容記入</p>
             <textarea name="memo">{{ $karute->memo }}</textarea>
-            <input type="file" name="imgPath" value="{{ $karute->imgPath }}">
+            <!-- <input type="file" name="imgPath" value="{{ $karute->imgPath }}"> -->
+            <!-- @if ($karute->imgPath)
+            <img src="{{ Storage::url($karute->imgPath) }}" alt="施術画像" style="max-width: 100%;">
+        @endif -->
         </div>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">

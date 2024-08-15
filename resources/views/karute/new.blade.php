@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <form action="{{ route('karute_store', ['id'=>$customer->id]) }}" method="POST">
+    <form action="{{ route('karute_store', ['id'=>$customer->id]) }}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="card" style="width: 50%;">
         
@@ -13,12 +13,14 @@
          
             <div class="col-md-4">
                 <textarea name="memo" placeholder="施術内容記入"></textarea>
-                <input type="file">
-                <p>カスタマーID：{{ $customer->customer_id }}</p>
-                <input type="hidden" name="customer_id" value="{{ $customer->id }}">
-
+                <input type="file" name="imgPath" accept="image/*">
+                
+                @if (isset($karute) && $karute->imgPath)
+                    <!-- <img src="{{ asset('storage/' . $karute->imgPath) }}" alt="施術画像" style="max-width: 100%;"> -->
+                    <img src="{{ Storage::url($karute->imgPath) }}" alt="施術画像" style="max-width: 100%;">
+                @endif
+                
             </div>
-            
         </div>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">

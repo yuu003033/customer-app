@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Karute;
 use App\Models\Customer;
+use Illuminate\Support\Facades\Storage;
 
 class KaruteController extends Controller
 {
@@ -20,18 +21,18 @@ class KaruteController extends Controller
         return view('create.new');
     }
     public function store(Request $request, $id){
+        
         // バリデーション
         // dd($request->all());
         $request->validate([
             'customer_id' => 'required',
             'date' => 'date',
-            // 'imgPath' => 'string',
+            'imgPath' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
     //  dd($request->all());
         $karutes = new Karute;
         $karutes->customer_id = $request->customer_id;
         $karutes->memo = $request->memo ?? '';
-    
         // カスタム変換ロジック
         $karutes->extention = $request->has('extention') ? 1 : 0;
         $karutes->lashlift = $request->has('lashlift') ? 1 : 0;
@@ -49,6 +50,11 @@ class KaruteController extends Controller
         $karutes->eyebrowsLeft = $request->eyebrowsLeft ?? '';
         $karutes->date = $request->date;
         $karutes->imgPath = $request->imgPath ?? '';
+
+        if ($request->hasFile('imgPath')) {
+            $path = $request->file('imgPath')->store('images', 'public');
+            $karutes->imgPath = $path;
+        }
 // dd($request->all());
     // 保存前にログ出力
     // Log::info('保存前のデータ: ', $karutes->toArray());
@@ -77,7 +83,7 @@ class KaruteController extends Controller
         $karute->eyebrowsRight = $request->eyebrowsRight;
         $karute->eyebrowsLeft = $request->eyebrowsLeft;
         $karute->date = $request->date;
-        // $karute->imgPath = $request->imgPath;
+        $karute->imgPath = $request->imgPath;
         // dd($request->all());
         $karute->save();
 
