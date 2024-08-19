@@ -9,8 +9,7 @@
     <div class="card" style="width: 50%;">
     <input type="hidden" name="customer_id" value="{{ $karute->customer_id }}">
         @if ($karute->imgPath)
-        <img src="{{ Storage::url($karute->imgPath) }}" alt="施術画像" style="max-width: 100%;">
-        {{ dd(Storage::url($karute->imgPath)) }}
+        <input src="{{ Storage::url($karute->imgPath) }}" name="imgPath" alt="施術画像" style="max-width: 100%;">
         @else  
         <img src="{{ asset('images/no-img.jpg') }}" class="card-img-top" alt="" width="100">
         @endif

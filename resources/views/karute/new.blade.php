@@ -16,8 +16,8 @@
                 <input type="file" name="imgPath" accept="image/*">
                 
                 @if (isset($karute) && $karute->imgPath)
-                    <!-- <img src="{{ asset('storage/' . $karute->imgPath) }}" alt="施術画像" style="max-width: 100%;"> -->
                     <img src="{{ Storage::url($karute->imgPath) }}" alt="施術画像" style="max-width: 100%;">
+
                 @endif
                 
             </div>

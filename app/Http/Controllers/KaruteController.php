@@ -27,7 +27,7 @@ class KaruteController extends Controller
         $request->validate([
             'customer_id' => 'required',
             'date' => 'date',
-            'imgPath' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'imgPath' => 'image|required',
         ]);
     //  dd($request->all());
         $karutes = new Karute;
@@ -52,8 +52,10 @@ class KaruteController extends Controller
         $karutes->imgPath = $request->imgPath ?? '';
 
         if ($request->hasFile('imgPath')) {
-            $path = $request->file('imgPath')->store('images', 'public');
+            $path = $request->file('imgPath')->store('image', 'public');
             $karutes->imgPath = $path;
+            echo "upload success";
+            exit;
         }
 // dd($request->all());
     // 保存前にログ出力
