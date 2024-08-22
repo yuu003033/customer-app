@@ -26,8 +26,14 @@ class KaruteController extends Controller
         // dd($request->all());
         $request->validate([
             'customer_id' => 'required',
+        //     'rightUp' => 'string',
+        // 'leftUp' => 'string',
+        // 'rightDown' => 'string', 
+        // 'leftDown' => 'string',
+        // 'eyebrowsRight' => 'string',
+        // 'eyebrowsLeft' => 'string',
             'date' => 'date',
-            'imgPath' => 'image|required',
+            'imgPath' => 'mimes:png,jpg,jpeg,pdf',
         ]);
     //  dd($request->all());
         $karutes = new Karute;
@@ -52,14 +58,11 @@ class KaruteController extends Controller
         $karutes->imgPath = $request->imgPath ?? '';
 
         if ($request->hasFile('imgPath')) {
-            $path = $request->file('imgPath')->store('image', 'public');
+            $path = $request->file('imgPath')->store('images', 'public');
             $karutes->imgPath = $path;
-            echo "upload success";
-            exit;
         }
 // dd($request->all());
-    // 保存前にログ出力
-    // Log::info('保存前のデータ: ', $karutes->toArray());
+
         $karutes->save();
     //      // データが保存されたことを確認するためのデバッグ
     // Log::info('保存完了: ', ['karute_id' => $karutes->id]);
@@ -78,18 +81,18 @@ class KaruteController extends Controller
         $karute->upAndDown = $request->upAndDown ? 1 : 0;
         $karute->lowerEyelashes = $request->lowerEyelashes ? 1 : 0;
         $karute->off = $request->off ? 1 : 0;
-        $karute->rightUp = $request->rightUp;
-        $karute->leftUp = $request->leftUp;
-        $karute->rightDown = $request->rightDown;
-        $karute->leftDown = $request->leftDown;
-        $karute->eyebrowsRight = $request->eyebrowsRight;
-        $karute->eyebrowsLeft = $request->eyebrowsLeft;
+        $karute->rightUp = $request->rightUp ?? '';
+        $karute->leftUp = $request->leftUp ?? '';
+        $karute->rightDown = $request->rightDown ?? '';
+        $karute->leftDown = $request->leftDown ?? '';
+        $karute->eyebrowsRight = $request->eyebrowsRight ?? '';
+        $karute->eyebrowsLeft = $request->eyebrowsLeft?? '';
         $karute->date = $request->date;
-        $karute->imgPath = $request->imgPath;
+        $karute->imgPath = $request->imgPath ?? '';
         // dd($request->all());
         $karute->save();
 
-        return redirect()->route('karute_edit', ['id' => $karute->id]);
+        return redirect()->route('detail',['id'=>$request->customer_id]);
     }
     public function detail($id){
         $customer = Customer::find($id);

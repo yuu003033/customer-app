@@ -57,6 +57,7 @@
   <div class="col-auto">
     <button type="submit" class="btn btn-primary">更新</button>
   </div>
+  <a href="{{ route('home') }}" class="btn btn-outline-dark">＜ホーム画面に戻る</a>
 </form>
 </div>
 

@@ -9,9 +9,11 @@
     <div class="card" style="width: 50%;">
     <input type="hidden" name="customer_id" value="{{ $karute->customer_id }}">
         @if ($karute->imgPath)
-        <input src="{{ Storage::url($karute->imgPath) }}" name="imgPath" alt="施術画像" style="max-width: 100%;">
+         <!-- 画像が存在する場合は表示-->
+        <img src="{{ Storage::url($karute->imgPath) }}" alt="施術画像" style="max-width: 100%;">
         @else  
-        <img src="{{ asset('images/no-img.jpg') }}" class="card-img-top" alt="" width="100">
+        <!-- 画像が存在しない場合は、デフォルト画像を表示 -->
+        <img src="{{ asset('images/no-img.jpg') }}" class="card-img-top" alt="No Image" style="max-width: 100%;">
         @endif
 
         <div class="card-body">
@@ -19,10 +21,7 @@
             <p>名前：{{$customer->name}}</p>
             <p class="card-text">施術内容記入</p>
             <textarea name="memo">{{ $karute->memo }}</textarea>
-            <!-- <input type="file" name="imgPath" value="{{ $karute->imgPath }}"> -->
-            <!-- @if ($karute->imgPath)
-            <img src="{{ Storage::url($karute->imgPath) }}" alt="施術画像" style="max-width: 100%;">
-        @endif -->
+            <!-- <input type="file" name="imgPath"> -->
         </div>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
@@ -78,6 +77,7 @@
         <div class="p-2">
             <input type="date" class="btn btn-outline-primary" name="date" value="{{ $karute->date }}">
             <input class="btn btn-outline-primary" type="submit" value="更新">
+            <a href="{{ route('home') }}" class="btn btn-outline-dark">＜ホーム画面に戻る</a>
         </div>
         <div class="ms-auto p-2" role="group" aria-label="Basic button">
         <input class="btn btn-outline-primary"  onClick="deleteKaruteConfirm({{ $karute->id }})" name="delete"  type="button" value="削除">

@@ -4,6 +4,7 @@
 <div class="container">
 
   <div class="row g-2">
+    
     <div class="col-md-8">
       <div class="form-floating">
         <h1>顧客詳細</h1>
@@ -34,8 +35,9 @@
     <div class="col">
     </div>
     <h2>来店履歴</h2>
+
     <table class="table table-striped" >
-      
+     
       <thead>
         <tr>
           <th scope="col">来店日</th>
@@ -57,6 +59,7 @@
     </table>
       
     </div>
+    <a href="{{ route('home') }}" class="btn btn-outline-dark">＜ホーム画面に戻る</a>
   </div>
 
 </div>

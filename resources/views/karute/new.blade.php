@@ -5,6 +5,7 @@
 <div class="container">
     <form action="{{ route('karute_store', ['id'=>$customer->id]) }}" method="POST" enctype="multipart/form-data">
     @csrf
+    <input type="hidden" name="customer_id" value="{{$customer->id}}">
     <div class="card" style="width: 50%;">
         
         <div class="card-body">
@@ -13,7 +14,7 @@
          
             <div class="col-md-4">
                 <textarea name="memo" placeholder="施術内容記入"></textarea>
-                <input type="file" name="imgPath" accept="image/*">
+                <input type="file" name="imgPath">
                 
                 @if (isset($karute) && $karute->imgPath)
                     <img src="{{ Storage::url($karute->imgPath) }}" alt="施術画像" style="max-width: 100%;">
