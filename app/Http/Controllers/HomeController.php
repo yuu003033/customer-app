@@ -24,15 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // $karuteLists  = Customer::with('karutes')->where('status', 0)->whereHas('karutes', function($q){
-        //     if($q->exists()){
-        //         $q->orderBy('updated_at', 'desc');
-        //     }
-            
-        // })->get();
         $karuteLists = Customer::where('status', 0)->get();
-        // dd($karuteLists);
-        // $karutes = Karute::where('date')->orderBy('date', 'desc')->get();
+        
         return view('home',compact('karuteLists'));
     }
 }

@@ -15,10 +15,8 @@
             <div class="col-md-4">
                 <textarea name="memo" placeholder="施術内容記入"></textarea>
                 <input type="file" name="imgPath">
-                
                 @if (isset($karute) && $karute->imgPath)
                     <img src="{{ Storage::url($karute->imgPath) }}" alt="施術画像" style="max-width: 100%;">
-
                 @endif
                 
             </div>

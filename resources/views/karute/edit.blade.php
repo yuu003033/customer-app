@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <form action="{{ route('karute_update', ['id'=>$karute->id]) }}" method="POST">
+    <form action="{{ route('karute_update', ['id'=>$karute->id]) }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('POST')
     <div class="card" style="width: 50%;">
@@ -21,8 +21,14 @@
             <p>名前：{{$customer->name}}</p>
             <p class="card-text">施術内容記入</p>
             <textarea name="memo">{{ $karute->memo }}</textarea>
-            <!-- <input type="file" name="imgPath"> -->
+            <div class="form-group">
+                <label for="imgPath">＜新しい画像を選択＞</label>
+                <input type="file" name="imgPath" >
+            </div>
         </div>
+       
+            
+       
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
             <h6 class="mb-1">施術項目</h6>

@@ -90,6 +90,16 @@ class KaruteController extends Controller
         $karute->date = $request->date;
         $karute->imgPath = $request->imgPath ?? '';
         // dd($request->all());
+        // 新しい画像がアップロードされた場合
+        if ($request->hasFile('imgPath')){
+            // 古い画像があれば削除
+            if ($karute->imgPath){
+                Storage::delete('public/' . $karute->imgPath);
+            }
+            // 新しい画像を保存
+            $path = $request->file('imgPath')->store('images', 'public');
+            $karute->imgPath = $path;
+        }
         $karute->save();
 
         return redirect()->route('detail',['id'=>$request->customer_id]);
