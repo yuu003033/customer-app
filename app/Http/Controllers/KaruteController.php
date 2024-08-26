@@ -26,12 +26,6 @@ class KaruteController extends Controller
         // dd($request->all());
         $request->validate([
             'customer_id' => 'required',
-        //     'rightUp' => 'string',
-        // 'leftUp' => 'string',
-        // 'rightDown' => 'string', 
-        // 'leftDown' => 'string',
-        // 'eyebrowsRight' => 'string',
-        // 'eyebrowsLeft' => 'string',
             'date' => 'date',
             'imgPath' => 'mimes:png,jpg,jpeg,pdf',
         ]);
@@ -93,8 +87,8 @@ class KaruteController extends Controller
         // 新しい画像がアップロードされた場合
         if ($request->hasFile('imgPath')){
             // 古い画像があれば削除
-            if ($karute->imgPath){
-                Storage::delete('public/' . $karute->imgPath);
+            if(isset($karute->imgPath)){
+                Storage::delete('public/imges/'. $karute->imgPath);
             }
             // 新しい画像を保存
             $path = $request->file('imgPath')->store('images', 'public');
