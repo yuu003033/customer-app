@@ -21,7 +21,6 @@ class KaruteController extends Controller
         return view('create.new');
     }
     public function store(Request $request, $id){
-        
         // バリデーション
         // dd($request->all());
         $request->validate([
@@ -58,8 +57,7 @@ class KaruteController extends Controller
 // dd($request->all());
 
         $karutes->save();
-    //      // データが保存されたことを確認するためのデバッグ
-    // Log::info('保存完了: ', ['karute_id' => $karutes->id]);
+
     return redirect()->route('detail',['id'=>$request->customer_id]);
     }
 

@@ -72,7 +72,7 @@
         </ul>
     </div>
     <div class="col-md-4 btn-group" role="group" aria-label="Basic button group">
-    <input type="date" class="btn btn-outline-primary" name="date">               
+        <input type="date" class="btn btn-outline-primary" name="date">               
         <input class="btn btn-outline-primary" type="submit" value="登録">
     </div>
     </form>

@@ -20,7 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-// Route::get('/register', [App\Http\Controllers\HomeController::class, 'register'])->name('register');
+Route::post('/customer_name_search', [App\Http\Controllers\SearchController::class, 'customer_name'])->name('customer_name_search');
 
 Route::get('/customer/detail/{id}', [App\Http\Controllers\CustomerController::class, 'detail'])->name('detail');
 Route::get('/customer/new', [App\Http\Controllers\CustomerController::class, 'new'])->name('new');// 新規登録

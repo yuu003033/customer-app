@@ -2,27 +2,15 @@
 
 @section('content')
 <div class="container">
-
-  <div class="row g-2">
-    
-    <div class="col-md-8">
-      <div class="form-floating">
-        <h1>顧客詳細</h1>
-        <a href="{{ route('edit', ['id'=>$customer->id]) }}" class="btn btn-outline-secondary">顧客編集</a>
-      </div>
+  <div class="row g-0 text-center-bottom">
+    <div class="col-6 col-md-4">
+        <h1 class="m-0">顧客詳細</h1>
     </div>
-    <div class="col-md-4">
-      <div class="form-floating">
-      <div class="btn">
-          <a href="{{ route('karute', ['id'=>$customer->id]) }}" class="btn btn-outline-primary">新規カルテ作成</a>
-        </div>
-        <div class="btn">
-          
-        </div>
-      </div>
+    <div class="col-sm-6 col-md-8 btn-group" role="group">
+      <a class="btn btn-outline-success" href="{{ route('karute', ['id'=>$customer->id]) }}">新規カルテ作成</a>
+      <a class="btn btn-outline-success" href="{{ route('edit', ['id'=>$customer->id]) }}">顧客編集</a>
     </div>
   </div>
- 
   <p>ID：{{$customer->id}}</p>
   <h3>名前：{{$customer->name}}</h3>
   <p>TEL：{{$customer->telephone}}</p>
@@ -42,7 +30,6 @@
         <tr>
           <th scope="col">来店日</th>
           <th scope="col">メニュー</th>
-          <th scope="col"></th>
           <th scope="col"></th>
         </tr>
       </thead>
