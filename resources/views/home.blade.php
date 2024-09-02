@@ -43,11 +43,11 @@
                         <tbody class="tr_lists">
                     @foreach($karuteLists as $list)
                         <tr id="{{$list->id}}">
-                            <td class="text-center align-middle">{{ $list->id }}</td>
-                            <td class="text-center align-middle">{{ $list->name }}</td>
+                            <td class="align-middle">{{ $list->id }}</td>
+                            <td class="align-middle">{{ $list->name }}</td>
                             <td></td>
-                            <td class="text-center align-middle">{{ $list->menu }}</td>
-                            <td class="text-center align-middle">
+                            <td class="align-middle">{{ $list->menu }}</td>
+                            <td class="align-middle">
                                 <form method="POST" action="{{ route('changeStatus',['id'=>$list->id]) }}">
                                 @csrf
                                     <input type="hidden" name="trashBox" value="{{$list->id}}">
@@ -58,7 +58,7 @@
                                 
                             </td>
                        
-                            <td class="text-center align-middle">
+                            <td class="align-middle">
                                 <input type="hidden" name="detail">
                                 <a type="button" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="{{ route('detail',['id'=>$list->id]) }}">顧客情報</a>
                             </td>
